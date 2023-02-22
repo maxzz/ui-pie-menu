@@ -7,7 +7,7 @@
     /* --sf: 246.92 47.273% 34.51%; */
     /* --af: 310.41 49.388% 41.569%; */
     /* --nf: 217.02 92.157% 8%; */
-    --pc: 211.79 100% 90.157%;      /* primary color */
+    --pc: 211.79 100% 90.157%; /* primary color */
     /* --sc: 246.92 100% 88.627%; */
     /* --ac: 310.41 100% 90.392%; */
     /* --nc: 217.02 100% 82%; */
@@ -29,7 +29,7 @@
     --tab-border: 1px;
     --tab-radius: 0.5rem;
 
-    --p: 211.79 100% 50.784%;       /* primary background */
+    --p: 211.79 100% 50.784%; /* primary background */
     /* --s: 246.92 47.273% 43.137%; */
     /* --a: 310.41 49.388% 51.961%; */
     /* --n: 217.02 92.157% 10%; */
@@ -45,13 +45,13 @@
 
 /*  */
 
-.rounded-tr-box {
+/* .rounded-tr-box {
     border-top-right-radius: var(--rounded-box, 1rem);
 }
 .rounded-b-box {
     border-bottom-left-radius: var(--rounded-box, 1rem);
     border-bottom-right-radius: var(--rounded-box, 1rem);
-}
+} */
 
 /* tab container */
 
