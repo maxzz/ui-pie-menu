@@ -3,40 +3,44 @@
 
 :root {
     color-scheme: light;
-    --pf: 211.79 100% 40.627%;
-    --sf: 246.92 47.273% 34.51%;
-    --af: 310.41 49.388% 41.569%;
-    --nf: 217.02 92.157% 8%;
-    --pc: 211.79 100% 90.157%;
-    --sc: 246.92 100% 88.627%;
-    --ac: 310.41 100% 90.392%;
-    --nc: 217.02 100% 82%;
-    --inc: 191.54 100% 15.608%;
-    --suc: 181.5 100% 13.255%;
-    --wac: 32.308 100% 16.706%;
-    --erc: 0 100% 14.431%;
+    /* --pf: 211.79 100% 40.627%; */
+    /* --sf: 246.92 47.273% 34.51%; */
+    /* --af: 310.41 49.388% 41.569%; */
+    /* --nf: 217.02 92.157% 8%; */
+    --pc: 211.79 100% 90.157%;      /* primary color */
+    /* --sc: 246.92 100% 88.627%; */
+    /* --ac: 310.41 100% 90.392%; */
+    /* --nc: 217.02 100% 82%; */
+    /* --inc: 191.54 100% 15.608%; */
+    /* --suc: 181.5 100% 13.255%; */
+    /* --wac: 32.308 100% 16.706%; */
+    /* --erc: 0 100% 14.431%; */
+
     --rounded-box: 1rem;
     --rounded-btn: 0.5rem;
-    --rounded-badge: 1.9rem;
-    --animation-btn: 0.25s;
-    --animation-input: 0.2s;
-    --btn-text-case: uppercase;
-    --btn-focus-scale: 0.95;
-    --border-btn: 1px;
+    /* --rounded-badge: 1.9rem; */
+
+    /* --animation-btn: 0.25s; */
+    /* --animation-input: 0.2s; */
+    /* --btn-text-case: uppercase; */
+    /* --btn-focus-scale: 0.95; */
+    /* --border-btn: 1px; */
+
     --tab-border: 1px;
     --tab-radius: 0.5rem;
-    --p: 211.79 100% 50.784%;
-    --s: 246.92 47.273% 43.137%;
-    --a: 310.41 49.388% 51.961%;
-    --n: 217.02 92.157% 10%;
+
+    --p: 211.79 100% 50.784%;       /* primary background */
+    /* --s: 246.92 47.273% 43.137%; */
+    /* --a: 310.41 49.388% 51.961%; */
+    /* --n: 217.02 92.157% 10%; */
     --b1: 0 0% 100%;
     --b2: 216.92 100% 97.451%;
     --b3: 218.82 43.59% 92.353%;
     --bc: 214.29 30.061% 31.961%;
-    --in: 191.54 92.857% 78.039%;
-    --su: 181.5 46.512% 66.275%;
-    --wa: 32.308 61.905% 83.529%;
-    --er: 0 63.38% 72.157%;
+    /* --in: 191.54 92.857% 78.039%; */
+    /* --su: 181.5 46.512% 66.275%; */
+    /* --wa: 32.308 61.905% 83.529%; */
+    /* --er: 0 63.38% 72.157%; */
 }
 
 /*  */
@@ -49,30 +53,31 @@
     border-bottom-right-radius: var(--rounded-box, 1rem);
 }
 
-/*  */
+/* tab container */
 
 .tab {
     position: relative;
+
     display: inline-flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
 
     height: 2rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
     line-height: 2;
 
     --tab-padding: 1rem;
-    --tw-text-opacity: .5;
+    --tw-text-opacity: 0.5;
     --tab-color: hsla(var(--bc) / var(--tw-text-opacity, 1));
     --tab-bg: hsla(var(--b1) / var(--tw-bg-opacity, 1));
     --tab-border-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
 
     color: var(--tab-color);
-    padding-left: var(--tab-padding,1rem);
-    padding-right: var(--tab-padding,1rem);
+    padding-left: var(--tab-padding, 1rem);
+    padding-right: var(--tab-padding, 1rem);
 
     cursor: pointer;
     user-select: none;
@@ -110,38 +115,45 @@
     border-bottom-width: calc(var(--tab-border, 1px) + 1px);
 }
 
+/* lifted */
+
 .tab-lifted {
     border: var(--tab-border, 1px) solid transparent;
     border-width: 0 0 var(--tab-border, 1px);
     border-top-left-radius: var(--tab-radius, 0.5rem);
     border-top-right-radius: var(--tab-radius, 0.5rem);
     border-bottom-color: var(--tab-border-color);
+
     padding-left: var(--tab-padding, 1rem);
     padding-right: var(--tab-padding, 1rem);
     padding-top: var(--tab-border, 1px);
 }
 
 .tab-lifted.tab-active {
-    background-color: var(--tab-bg);
     border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0;
     border-left-color: var(--tab-border-color);
     border-right-color: var(--tab-border-color);
     border-top-color: var(--tab-border-color);
+
     padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
     padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
     padding-bottom: var(--tab-border, 1px);
     padding-top: 0;
+
+    background-color: var(--tab-bg);
 }
 
 .tab-lifted.tab-active:before,
 .tab-lifted.tab-active:after {
-    z-index: 1;
     content: "";
-    display: block;
     position: absolute;
+    display: block;
     width: var(--tab-radius, 0.5rem);
     height: var(--tab-radius, 0.5rem);
+
     bottom: 0;
+    z-index: 1;
+
     --tab-grad: calc(68% - var(--tab-border, 1px));
     --tab-corner-bg: radial-gradient(
         circle at var(--circle-pos),
@@ -158,14 +170,14 @@
     background-image: var(--tab-corner-bg);
 }
 
-[dir="rtl"] .tab-lifted.tab-active:before {
-    --circle-pos: top right;
-}
-
 .tab-lifted.tab-active:after {
     right: calc(var(--tab-radius, 0.5rem) * -1);
     --circle-pos: top right;
     background-image: var(--tab-corner-bg);
+}
+
+[dir="rtl"] .tab-lifted.tab-active:before {
+    --circle-pos: top right;
 }
 
 [dir="rtl"] .tab-lifted.tab-active:after {
@@ -183,6 +195,8 @@
 .tab-lifted.tab-active + .tab-lifted.tab-active:before {
     background: 0 0;
 }
+
+/* boxed */
 
 .tabs-boxed {
     --tw-bg-opacity: 1;
