@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 import './menu.scss';
-//import './tabs.css';
+import './tabs.css';
 
 function PieMenu() {
     return (
