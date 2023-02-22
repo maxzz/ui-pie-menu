@@ -31,6 +31,23 @@ function PieMenu() {
     );
 }
 
+function TabsTest() {
+    function onSelect(event: React.MouseEvent<HTMLAnchorElement>) {
+        event.preventDefault();
+        event.currentTarget.parentElement?.querySelectorAll('a').forEach((elm) => elm.classList.remove('tab-active'));
+        event.currentTarget.classList.add('tab-active');
+    }
+    return (
+        <div className="p-4">
+            <div className="tabs">
+                <a className="tab-lifted" onClick={onSelect}>Tab 1</a>
+                <a className="tab-lifted tab-active" onClick={onSelect}>Tab 2</a>
+                <a className="tab-lifted" onClick={onSelect}>Tab 3</a>
+            </div>
+        </div>
+    );
+}
+
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
     backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
     backgroundSize: '5px 5px',
@@ -40,13 +57,7 @@ export function App() {
     return (
         <div className="h-screen bg-violet-700" style={styleDots}>
             <div className="relative h-full grid grid-rows-2">
-                <div className="">
-                    <div className="tabs tabs-boxed">
-                        <a className="tab">Tab 1</a>
-                        <a className="tab tab-active">Tab 2</a>
-                        <a className="tab">Tab 3</a>
-                    </div>
-                </div>
+                <TabsTest />
                 <PieMenu />
             </div>
         </div>
