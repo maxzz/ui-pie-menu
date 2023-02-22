@@ -35,20 +35,24 @@ function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; })
             {caption}
         </div>
 
-        <div className="cell-cnt hidden mx-2 px-2 h-48 col-span-full bg-orange-500/90 border-neutral-900/20 first-letter:text-2xl first-letter:font-bold">
+        <div
+            className="
+                cell-cnt hidden mx-2 px-4 py-4 col-span-full text-sm text-neutral-900/70 bg-orange-400/70 border-neutral-900/20 border rounded 
+                first-letter:text-2xl first-letter:font-bold
+            ">
             {content}
         </div>
     </>);
 }
 
 const articles = [
-    { caption: 'caption 1', content: '1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
-    { caption: 'caption 2', content: '2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
-    { caption: 'caption 3', content: '3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
-    { caption: 'caption 4', content: '4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
-    { caption: 'caption 5', content: '5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
-    { caption: 'caption 6', content: '6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
-    { caption: 'caption 7', content: '7 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 1', content: '1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 2', content: '2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 3', content: '3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 4', content: '4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 5', content: '5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 6', content: '6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
+    { caption: 'article 7', content: '7 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
 ];
 
 export function GridPreview() {
