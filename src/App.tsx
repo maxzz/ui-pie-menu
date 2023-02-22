@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import './menu.scss';
 
 function PieMenu() {
@@ -29,9 +30,14 @@ function PieMenu() {
     );
 }
 
+const styleDots: CSSProperties = { //https://daisyui.com/components/tab
+    backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
+    backgroundSize: '5px 5px',
+};
+
 export function App() {
     return (
-        <div className="h-screen bg-violet-700">
+        <div className="h-screen bg-violet-700" style={styleDots}>
             <PieMenu />
         </div>
     );
