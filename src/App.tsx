@@ -41,9 +41,9 @@ function TabsTest() {
         <div className="p-4">
             <div className="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4">
             <div className="tabs">
-                <a className="tab tab-lifted" onClick={onSelect}>Tab 1</a>
-                <a className="tab tab-lifted tab-active" onClick={onSelect}>Tab 2</a>
-                <a className="tab tab-lifted" onClick={onSelect}>Tab 3</a>
+                <a className="tab tab-lifted [--tab-color:#65b165]" onClick={onSelect}>Tab 1</a>
+                <a className="tab tab-lifted [--tab-color:#65b165] tab-active" onClick={onSelect}>Tab 2</a>
+                <a className="tab tab-lifted [--tab-color:#65b165]" onClick={onSelect}>Tab 3</a>
             </div>
             </div>
         </div>

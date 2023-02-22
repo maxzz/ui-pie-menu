@@ -1,3 +1,6 @@
+/* https://daisyui.com/components/tab */
+/* https://github.com/saadeghi/daisyui/blob/master/src/components/styled/tab.css */
+
 :root {
     color-scheme: light;
     --pf: 211.79 100% 40.627%;
@@ -66,7 +69,7 @@
     --tab-color: hsla(var(--bc) / var(--tw-text-opacity, 1));
     --tab-bg: hsla(var(--b1) / var(--tw-bg-opacity, 1));
     --tab-border-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
-    
+
     color: var(--tab-color);
     padding-left: var(--tab-padding,1rem);
     padding-right: var(--tab-padding,1rem);
