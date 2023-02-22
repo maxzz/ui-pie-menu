@@ -39,10 +39,10 @@ $item-transition: 0.5s;
 
 // styles
 
-body {
-    overflow: hidden;
-    background: linear-gradient(to right, #fc354c, #0abfbc);
-}
+// body {
+//     overflow: hidden;
+//     background: linear-gradient(to right, #9c35fc, #bf0ab3);
+// }
 
 .menu-toggler {
     @include absolute-center;

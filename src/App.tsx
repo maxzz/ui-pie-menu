@@ -1,9 +1,10 @@
 import { CSSProperties } from 'react';
 import './menu.scss';
+//import './tabs.css';
 
 function PieMenu() {
     return (
-        <nav className='menu'>
+        <nav className=''>
             <input className='menu-toggler' id='menu-toggler' type='checkbox' />
             <label htmlFor='menu-toggler'></label>
             <ul>
@@ -38,7 +39,16 @@ const styleDots: CSSProperties = { //https://daisyui.com/components/tab
 export function App() {
     return (
         <div className="h-screen bg-violet-700" style={styleDots}>
-            <PieMenu />
+            <div className="relative h-full grid grid-rows-2">
+                <div className="">
+                    <div className="tabs tabs-boxed">
+                        <a className="tab">Tab 1</a>
+                        <a className="tab tab-active">Tab 2</a>
+                        <a className="tab">Tab 3</a>
+                    </div>
+                </div>
+                <PieMenu />
+            </div>
         </div>
     );
 }
