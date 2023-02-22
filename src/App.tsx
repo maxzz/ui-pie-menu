@@ -1,54 +1,6 @@
 import { CSSProperties } from 'react';
-import './menu.scss';
-import './tabs.css';
-
-function PieMenu() {
-    return (
-        <nav className=''>
-            <input className='menu-toggler' id='menu-toggler' type='checkbox' />
-            <label htmlFor='menu-toggler'></label>
-            <ul>
-                <li className='menu-item'>
-                    <a className='fa fa-facebook' href='https://www.facebook.com/' target='_blank'></a>
-                </li>
-                <li className='menu-item'>
-                    <a className='fa fa-google' href='https://www.google.com/' target='_blank'></a>
-                </li>
-                <li className='menu-item'>
-                    <a className='fa fa-dribbble' href='https://dribbble.com/' target='_blank'></a>
-                </li>
-                <li className='menu-item'>
-                    <a className='fa fa-codepen' href='https://codepen.io/' target='_blank'></a>
-                </li>
-                <li className='menu-item'>
-                    <a className='fa fa-linkedin' href='https://www.linkedin.com/' target='_blank'></a>
-                </li>
-                <li className='menu-item'>
-                    <a className='fa fa-github' href='https://github.com/' target='_blank'></a>
-                </li>
-            </ul>
-        </nav>
-    );
-}
-
-function TabsTest() {
-    function onSelect(event: React.MouseEvent<HTMLAnchorElement>) {
-        event.preventDefault();
-        event.currentTarget.parentElement?.querySelectorAll('a').forEach((elm) => elm.classList.remove('tab-active'));
-        event.currentTarget.classList.add('tab-active');
-    }
-    return (
-        <div className="p-4">
-            <div className="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4">
-            <div className="tabs">
-                <a className="tab tab-lifted [--tab-color:#65b165]" onClick={onSelect}>Tab 1</a>
-                <a className="tab tab-lifted [--tab-color:#65b165] tab-active" onClick={onSelect}>Tab 2</a>
-                <a className="tab tab-lifted [--tab-color:#65b165]" onClick={onSelect}>Tab 3</a>
-            </div>
-            </div>
-        </div>
-    );
-}
+import { PieMenu } from './components/PieMenu';
+import { TabsTest } from './components/Tabs';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
     backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
