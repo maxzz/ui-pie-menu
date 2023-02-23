@@ -1,2 +1,2 @@
 import './tabs.css';
-export * from './TabsTest';
+export * from './TabsControl';
