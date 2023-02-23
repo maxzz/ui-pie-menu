@@ -16,7 +16,11 @@ const styleText: CSSProperties = {
 
 function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; }) {
     return (<>
-        <div className="cell-cap mx-2 my-2 px-2 py-4 text-4xl tracking-tighter uppercase text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#6a00ff] select-none cursor-pointer active:scale-[.97] grid place-items-center"
+        <div 
+            className="cell-cap mx-2 py-2 text-2xl tracking-tighter uppercase 
+            text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#6a00ff] 
+            select-none cursor-pointer active:scale-[.97] 
+            grid place-items-center"
             style={styleText}
             onClick={(event) => {
                 const el = event.currentTarget;
@@ -37,7 +41,7 @@ function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; })
 
         <div
             className="
-                cell-cnt hidden mx-2 px-4 py-4 col-span-full text-sm text-neutral-900/70 bg-orange-400/70 border-neutral-900/20 border rounded 
+                cell-cnt hidden mx-2 mb-2 px-4 py-4 col-span-full text-sm text-neutral-900/70 bg-orange-400/70 border-neutral-900/20 border rounded 
                 first-letter:mr-2 first-letter:text-4xl first-letter:font-bold first-letter:float-left
             ">
             {content}
@@ -58,7 +62,7 @@ const articles = [
 export function GridPreview() {
     return (
         <div>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] grid-flow-dense">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-y-1 grid-flow-dense">
                 {articles.map((article, idx) => (
                     <Cell {...article} key={idx} />
                 ))}
