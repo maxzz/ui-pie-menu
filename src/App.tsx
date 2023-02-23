@@ -2,6 +2,7 @@ import { CSSProperties } from 'react';
 import { GridPreview } from './components/GridPreview';
 import { PieMenu } from './components/PieMenu';
 import { TabsControl } from './components/Tabs';
+import { TabsTwUI } from './components/TabsTwUI';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
     backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
@@ -13,6 +14,7 @@ export function App() {
         <div className="h-screen bg-violet-700" style={styleDots}>
             <div className="relative h-full grid grid-rows-[auto_1fr_1fr]">
                 <TabsControl />
+                <TabsTwUI />
                 <GridPreview />
                 <PieMenu />
             </div>
