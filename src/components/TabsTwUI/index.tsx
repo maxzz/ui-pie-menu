@@ -13,8 +13,8 @@
   ```
 */
 const tabs = [
-    { name: 'My Account', href: '#', current: true },
-    { name: 'Company', href: '#', current: false },
+    { name: 'My Account', href: '#', current: false },
+    { name: 'Company', href: '#', current: true },
     { name: 'Team Members', href: '#', current: false },
     { name: 'Billing', href: '#', current: false },
 ];
@@ -30,13 +30,13 @@ function Tabs() {
                 <label htmlFor="tabs" className="sr-only">
                     Select a tab
                 </label>
-                
+
                 {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
                 <select
                     id="tabs"
                     name="tabs"
                     className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-                    defaultValue={tabs.find((tab) => tab.current)!.name}
+                    defaultValue={tabs.find((tab) => tab.current)?.name || ''}
                 >
                     {tabs.map((tab) => (
                         <option key={tab.name}>{tab.name}</option>
@@ -76,7 +76,7 @@ function Tabs() {
 
 export function TabsTwUI() {
     return(
-        <div className="p-4">
+        <div className="m-3 p-4 bg-violet-600/40 border-violet-900/30 border rounded-md shadow">
             <Tabs />
         </div>
     )

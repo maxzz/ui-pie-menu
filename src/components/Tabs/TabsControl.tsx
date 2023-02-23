@@ -23,7 +23,7 @@ export function TabsControl() {
         <div className="p-4">
             <div
                 className="p-4 min-h-[6rem] min-w-[18rem] max-w-4xl 
-                bg-cover bg-top border rounded-b-2xl rounded-tr-2xl flex flex-col flex-wrap"
+                bg-cover bg-top border-neutral-500/70 border rounded-b-xl rounded-tr-xl flex flex-col flex-wrap"
             >
                 <Tabs onClick={(name) => {
                     setTab(name);

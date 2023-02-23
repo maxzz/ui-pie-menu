@@ -12,7 +12,7 @@ const styleDots: CSSProperties = { //https://daisyui.com/components/tab
 export function App() {
     return (
         <div className="h-screen bg-violet-700" style={styleDots}>
-            <div className="relative h-full grid grid-rows-[auto_1fr_1fr]">
+            <div className="relative h-full grid grid-rows-[auto_auto_1fr_1fr]">
                 <TabsControl />
                 <TabsTwUI />
                 <GridPreview />
