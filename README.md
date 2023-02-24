@@ -2,7 +2,7 @@
 
 Pie menu with SASS
 
-![](src/assets/previews/2023-02-22_15-47-45.png)
+![](src/assets/previews/2023-02-23_19-46-28.png)
 
 ### Links, refs, credits
 
