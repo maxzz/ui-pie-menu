@@ -15,32 +15,33 @@ const styleText: CSSProperties = {
 };
 
 function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; }) {
+    function onClick(event: React.MouseEvent<HTMLElement, MouseEvent>) {
+        const clickCapElm = event.currentTarget;
+        clickCapElm.parentElement!.querySelectorAll<HTMLElement>('.cell-cap')
+            .forEach((cap) => {
+                const cnt = cap.nextElementSibling;
+                if (cap === clickCapElm) {
+                    cnt?.classList.toggle('hidden');
+                    if (cap.dataset.highlighted !== undefined) {
+                        delete cap.dataset.highlighted;
+                    } else {
+                        cap.dataset.highlighted = '';
+                    }
+                } else {
+                    cnt?.classList.add('hidden');
+                    delete cap.dataset.highlighted;
+                }
+            });
+    }
     return (<>
         <div
             className="cell-cap mx-2 py-2 text-xl font-bold tracking-tighter uppercase 
             text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#1c0493]
-            data-highlighted:bg-orange-500/50
-            select-none cursor-pointer active:scale-[.97] 
+            data-highlighted:bg-orange-500/50 data-highlighted:[--detail-color:#e800ff]
+            select-none cursor-pointer active:scale-x-[.99] 
             grid place-items-center"
             style={styleText}
-            onClick={(event) => {
-                const clickCapElm = event.currentTarget;
-                clickCapElm.parentElement!.querySelectorAll<HTMLElement>('.cell-cap')
-                    .forEach((cap) => {
-                        const cnt = cap.nextElementSibling;
-                        if (cap === clickCapElm) {
-                            cnt?.classList.toggle('hidden');
-                            if (cap.dataset.highlighted !== undefined) {
-                                delete cap.dataset.highlighted;
-                            } else {
-                                cap.dataset.highlighted = '';
-                            }
-                        } else {
-                            cnt?.classList.add('hidden');
-                            delete cap.dataset.highlighted;
-                        }
-                    });
-            }}
+            onClick={onClick}
         >
             {caption}
         </div>
