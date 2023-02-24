@@ -1,4 +1,4 @@
-const a = import('./tailwind/tailwind-plugin-debug-screens.js');
+//const a = import('./tailwind/tailwind-plugin-debug-screens.js');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,8 +7,9 @@ module.exports = {
         extend: {},
     },
     plugins: [
-        a,
-        //require('./tailwind/tailwind-plugin-debug-screens.cjs'),
+        //a,
+        require('./tailwind/tailwind-plugin-debug-screens.cjs'),
         require('./tailwind/tailwind-plugin-data-state.cjs'),
+        require('@tailwindcss/forms'),
     ],
 };
