@@ -18,28 +18,28 @@ function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; })
     return (<>
         <div
             className="cell-cap mx-2 py-2 text-xl font-bold tracking-tighter uppercase 
-            text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#1c0493] 
+            text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#1c0493]
+            data-highlighted:bg-orange-500/50
             select-none cursor-pointer active:scale-[.97] 
             grid place-items-center"
             style={styleText}
             onClick={(event) => {
-                const el = event.currentTarget;
-                const parentEl = el.parentElement!;
-                const cnts = parentEl.querySelectorAll<HTMLElement>('.cell-cap');
-                cnts.forEach((capEl) => {
-                    const cnt = capEl.nextElementSibling;
-                    if (capEl === el) {
-                        cnt?.classList.toggle('hidden');
-                        if (capEl.dataset.active !== undefined) {
-                            delete capEl.dataset.active;
+                const clickCapElm = event.currentTarget;
+                clickCapElm.parentElement!.querySelectorAll<HTMLElement>('.cell-cap')
+                    .forEach((cap) => {
+                        const cnt = cap.nextElementSibling;
+                        if (cap === clickCapElm) {
+                            cnt?.classList.toggle('hidden');
+                            if (cap.dataset.highlighted !== undefined) {
+                                delete cap.dataset.highlighted;
+                            } else {
+                                cap.dataset.highlighted = '';
+                            }
                         } else {
-                            capEl.dataset.active = '';
+                            cnt?.classList.add('hidden');
+                            delete cap.dataset.highlighted;
                         }
-                    } else {
-                        cnt?.classList.add('hidden');
-                        delete capEl.dataset.active;
-                    }
-                });
+                    });
             }}
         >
             {caption}
