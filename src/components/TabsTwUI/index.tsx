@@ -1,4 +1,4 @@
-/*
+/* 
   This example requires some changes to your config:
   
   ```
@@ -12,6 +12,9 @@
   }
   ```
 */
+//http://localhost:8090/components/tabs
+//C:\Y\w\7-third-parties-learn\tailwind-ui-27-01-23\react\components\application-ui\navigation\tabs\tabs_with_underline.jsx 
+
 const tabs = [
     { name: 'My Account', href: '#', current: false },
     { name: 'Company', href: '#', current: true },
