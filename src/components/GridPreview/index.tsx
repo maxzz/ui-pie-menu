@@ -16,22 +16,28 @@ const styleText: CSSProperties = {
 
 function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; }) {
     return (<>
-        <div 
-            className="cell-cap mx-2 py-2 text-2xl tracking-tighter uppercase 
-            text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#6a00ff] 
+        <div
+            className="cell-cap mx-2 py-2 text-xl font-bold tracking-tighter uppercase 
+            text-neutral-300/80 bg-neutral-400/20 border-neutral-900/70 border rounded-lg shadow [--detail-color:#1c0493] 
             select-none cursor-pointer active:scale-[.97] 
             grid place-items-center"
             style={styleText}
             onClick={(event) => {
                 const el = event.currentTarget;
                 const parentEl = el.parentElement!;
-                const cnts = parentEl.querySelectorAll('.cell-cap');
+                const cnts = parentEl.querySelectorAll<HTMLElement>('.cell-cap');
                 cnts.forEach((capEl) => {
                     const cnt = capEl.nextElementSibling;
                     if (capEl === el) {
                         cnt?.classList.toggle('hidden');
+                        if (capEl.dataset.active !== undefined) {
+                            delete capEl.dataset.active;
+                        } else {
+                            capEl.dataset.active = '';
+                        }
                     } else {
                         cnt?.classList.add('hidden');
+                        delete capEl.dataset.active;
                     }
                 });
             }}
