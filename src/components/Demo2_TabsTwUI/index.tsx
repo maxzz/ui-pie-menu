@@ -73,7 +73,7 @@ function Tabs() {
     );
 }
 
-export function TabsTwUI() {
+export function Demo2_TabsTwUI() {
     return (
         <div className="m-3 p-4 bg-violet-600/40 border-violet-900/30 border rounded-md shadow select-none">
             <Tabs />

@@ -1,5 +1,5 @@
 import { classNames } from "../../utils";
-import { appState, useSnapshot } from "../store";
+import { appState, useSnapshot } from "../../store";
 
 type Tab = { id: number; name: string; };
 
@@ -34,7 +34,8 @@ const tabs: Tab[] = [
     { id: 1, name: 'Rounded Tabs' },
     { id: 2, name: 'Classic Tabs' },
     { id: 3, name: 'Grid Preview' },
-    { id: 4, name: 'Pie Menu' },
+    { id: 4, name: 'Radio' },
+    { id: 5, name: 'Pie Menu' },
     { id: 0, name: 'All' },
 ];
 

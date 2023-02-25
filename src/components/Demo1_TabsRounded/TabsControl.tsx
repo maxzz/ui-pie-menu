@@ -17,7 +17,7 @@ function Tabs({ onClick }: { onClick?: (name: string) => void; }) {
     );
 }
 
-export function TabsControl() {
+export function Demo1_TabsRounded() {
     const [tab, setTab] = useState('none');
     return (
         <div className="p-4">
