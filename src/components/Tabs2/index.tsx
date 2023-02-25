@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSnapshot } from "valtio/react";
+import { useSnapshot } from "valtio";
 import { appState } from "../store";
 
 function classNames(...classes: string[]) {
@@ -33,10 +33,10 @@ function TabButtons({ tabs, selected, onSelect }: { tabs: Tab[]; selected: numbe
 }
 
 const tabs: Tab[] = [
-    { id: 0, name: 'My Account' },
-    { id: 1, name: 'Company' },
-    { id: 2, name: 'Team Members' },
-    { id: 3, name: 'Billing' },
+    { id: 0, name: 'Rounded Tabs' },
+    { id: 1, name: 'Classic Tabs' },
+    { id: 2, name: 'Grid Preview' },
+    { id: 3, name: 'Pie Menu' },
 ];
 
 export function Tabs() {
