@@ -63,7 +63,7 @@ const articles = [
     { caption: 'article 7', content: '7 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos. Aliquam delectus mollitia voluptatem eveniet ipsum natus laborum atque quae praesentium, fugiat a! Temporibus consequatur dolorum odio voluptatibus. Numquam, perferendis.' },
 ];
 
-export function GridPreview() {
+export function Demo3_GridPreview() {
     return (
         <div>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-y-1 grid-flow-dense">

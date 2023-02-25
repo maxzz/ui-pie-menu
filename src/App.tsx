@@ -1,10 +1,10 @@
 import { CSSProperties, Fragment } from 'react';
 import { appState, filterValues, setFilter, useSnapshot } from './components/store';
 import { Section1_Tabs } from './components/Section1_Tabs';
-import { TabsControl } from './components/Tabs';
-import { TabsTwUI } from './components/TabsTwUI';
-import { GridPreview } from './components/GridPreview';
-import { PieMenu } from './components/PieMenu';
+import { TabsControl } from './components/Demo1_TabsRounded';
+import { TabsTwUI } from './components/Demo2_TabsTwUI';
+import { Demo3_GridPreview } from './components/Demo3_GridPreview';
+import { Demo4_PieMenu } from './components/Demo4_PieMenu';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
     backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
@@ -43,7 +43,7 @@ export function App() {
                 <div className={(activeTab === 4) ? 'hidden' : ''}>
                     {(activeTab === 1 || activeTab === 0) && <TabsControl />}
                     {(activeTab === 2 || activeTab === 0) && <TabsTwUI />}
-                    {(activeTab === 3 || activeTab === 0) && <GridPreview />}
+                    {(activeTab === 3 || activeTab === 0) && <Demo3_GridPreview />}
 
                     <div className="mx-2 my-4 px-4 py-4 border-neutral-500/50 border rounded">
                         <nav className="flex items-center text-green-500/80 space-x-4">
@@ -52,7 +52,7 @@ export function App() {
                     </div>
                 </div>
 
-                {(activeTab === 4 || activeTab === 0) && <PieMenu />}
+                {(activeTab === 4 || activeTab === 0) && <Demo4_PieMenu />}
             </div>
         </div>
     );

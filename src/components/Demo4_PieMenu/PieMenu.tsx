@@ -1,4 +1,4 @@
-export function PieMenu() {
+export function Demo4_PieMenu() {
     return (
         <nav className='relative'>
             <input className='menu-toggler' id='menu-toggler' type='checkbox' />
