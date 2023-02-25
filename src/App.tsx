@@ -15,7 +15,7 @@ export function App() {
     const { activeTab } = useSnapshot(appState);
     return (
         <div className="h-screen">
-            <div className="fixed inset-0 bg-violet-700" style={styleDots}></div>
+            <div className="fixed inset-0 bg-violet-700 select-none" style={styleDots}></div>
 
             <div className="relative h-full grid grid-rows-[auto_2fr_1fr]">
                 <Section1_Tabs />

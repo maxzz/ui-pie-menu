@@ -41,7 +41,7 @@ const tabs: Tab[] = [
 export function Section1_Tabs() {
     const snap = useSnapshot(appState);
     return (
-        <nav className="px-4 py-2 isolate flex divide-x divide-violet-900 shadow" aria-label="Tabs">
+        <nav className="px-4 py-2 isolate flex divide-x divide-violet-900 shadow select-none" aria-label="Tabs">
             <TabButtons tabs={tabs} selected={snap.activeTab} onSelect={(id) => {
                 appState.activeTab = id;
             }} />

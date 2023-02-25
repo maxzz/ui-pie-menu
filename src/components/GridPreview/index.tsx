@@ -49,7 +49,7 @@ function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; })
         <div
             className="
                 cell-cnt hidden mx-2 mb-2 px-4 py-4 col-span-full text-sm text-neutral-100/70 bg-orange-400/70 border-neutral-900/20 border rounded 
-                first-letter:mr-2 first-letter:text-4xl first-letter:text-orange-800 first-letter:font-bold first-letter:float-left
+                first-letter:mr-2 first-letter:text-4xl first-letter:text-orange-800 first-letter:font-bold first-letter:float-left first-letter:select-none
             ">
             {content}
         </div>
