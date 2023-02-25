@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
-import { appState, useSnapshot } from './components/store';
+import { CSSProperties, Fragment } from 'react';
+import { appState, filterValues, setFilter, useSnapshot } from './components/store';
 import { Section1_Tabs } from './components/Section1_Tabs';
 import { TabsControl } from './components/Tabs';
 import { TabsTwUI } from './components/TabsTwUI';
@@ -9,6 +9,26 @@ import { PieMenu } from './components/PieMenu';
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
     backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
     backgroundSize: '5px 5px',
+};
+
+const Filters = () => { //https://valtio.pmnd.rs/docs/introduction/getting-started
+    const snap = useSnapshot(appState);
+    return (<>
+        {filterValues.map((filter) => (
+            <Fragment key={filter}>
+                <label className="space-x-1">
+                    <input
+                        type="radio"
+                        name="filter"
+                        value={filter}
+                        checked={snap.filter === filter}
+                        onChange={() => setFilter(filter)}
+                    />
+                    <span>{filter}</span>
+                </label>
+            </Fragment>
+        ))}
+    </>);
 };
 
 export function App() {
@@ -24,6 +44,12 @@ export function App() {
                     {(activeTab === 1 || activeTab === 0) && <TabsControl />}
                     {(activeTab === 2 || activeTab === 0) && <TabsTwUI />}
                     {(activeTab === 3 || activeTab === 0) && <GridPreview />}
+
+                    <div className="mx-2 my-4 px-4 py-4 border-neutral-500/50 border rounded">
+                        <nav className="flex items-center text-green-500/80 space-x-4">
+                            <Filters />
+                        </nav>
+                    </div>
                 </div>
 
                 {(activeTab === 4 || activeTab === 0) && <PieMenu />}
