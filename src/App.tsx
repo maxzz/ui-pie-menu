@@ -5,6 +5,7 @@ import { Demo2_TabsTwUI } from './components/Demo2_TabsTwUI';
 import { Demo3_GridPreview } from './components/Demo3_GridPreview';
 import { Demo4_PieMenu } from './components/Demo4_PieMenu';
 import { Demo5_Radio } from './components/Demo5_Radio';
+import { Demo6_Panels } from './components/Demo6_Panels';
 import { Section1_Tabs } from './components/Section1_Tabs';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
@@ -27,6 +28,8 @@ export function App() {
                     {(activeTab === 3 || activeTab === 0) && <Demo3_GridPreview />}
                     {(activeTab === 4 || activeTab === 0) && <Demo5_Radio />}
                 </div>
+
+                <Demo6_Panels />
 
                 {(activeTab === 5 || activeTab === 0) && <Demo4_PieMenu />}
             </div>

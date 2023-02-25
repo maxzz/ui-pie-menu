@@ -7,12 +7,12 @@ function TabButtons({ tabs, selected, onSelect }: { tabs: Tab[]; selected: numbe
     return (<>
         {tabs.map((tab, idx) => (
             <button
-                key={tab.name}
+                key={`${idx}-${tab.name}`}
                 className={classNames(
                     idx === 0 ? 'rounded-l' : '',
                     idx === tabs.length - 1 ? 'rounded-r' : '',
                     tab.id === selected ? 'text-green-500 bg-violet-900/50' : 'text-green-500/70 hover:text-green-500',
-                    'group relative min-w-0 flex-1 overflow-hidden px-2 py-3 focus:z-10',
+                    'group relative flex-1 min-w-0 overflow-hidden px-2 py-3 focus:z-10',
                     'text-sm font-medium text-center select-none transition-colors duration-300',
                     'bg-violet-900/20  hover:bg-violet-900/50',
                 )}
@@ -35,6 +35,10 @@ const tabs: Tab[] = [
     { id: 2, name: 'Classic Tabs' },
     { id: 3, name: 'Grid Preview' },
     { id: 4, name: 'Radio' },
+    
+    // { id: 14, name: 'Radio' },
+    // { id: 15, name: 'Radio' },
+
     { id: 5, name: 'Pie Menu' },
     { id: 0, name: 'All' },
 ];
@@ -42,7 +46,7 @@ const tabs: Tab[] = [
 export function Section1_Tabs() {
     const snap = useSnapshot(appState);
     return (
-        <nav className="px-4 pt-4 pb-2 divide-violet-900 shadow isolate flex divide-x" aria-label="Tabs">
+        <nav className="px-4 pt-4 pb-2 divide-violet-900 shadow isolate flex flex-wrap divide-x" aria-label="Tabs">
             <TabButtons tabs={tabs} selected={snap.activeTab} onSelect={(id) => {
                 appState.activeTab = id;
             }} />

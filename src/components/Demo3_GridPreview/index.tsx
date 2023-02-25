@@ -65,7 +65,7 @@ const articles = [
 
 export function Demo3_GridPreview() {
     return (
-        <div>
+        <div className="mt-4">
             <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-y-1 grid-flow-dense">
                 {articles.map((article, idx) => (
                     <Cell {...article} key={idx} />
