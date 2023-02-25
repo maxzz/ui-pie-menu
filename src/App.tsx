@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import { GridPreview } from './components/GridPreview';
 import { PieMenu } from './components/PieMenu';
 import { TabsControl } from './components/Tabs';
-import { Tabs2 } from './components/Tabs2';
+import { Tabs as TopTabs } from './components/Tabs2';
 import { TabsTwUI } from './components/TabsTwUI';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
@@ -13,10 +13,10 @@ const styleDots: CSSProperties = { //https://daisyui.com/components/tab
 export function App() {
     return (
         <div className="h-screen bg-violet-700" style={styleDots}>
-            <div className="relative h-full grid grid-rows-[auto_auto_1fr_1fr]">
+            <div className="relative h-full grid grid-rows-[auto_auto_2fr_1fr]">
+                <TopTabs />
                 <TabsControl />
                 <TabsTwUI />
-                <Tabs2 />
                 <GridPreview />
                 <PieMenu />
             </div>

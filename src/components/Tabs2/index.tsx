@@ -6,7 +6,7 @@ function classNames(...classes: string[]) {
 
 type Tab = { id: number; name: string; };
 
-function Tabs({ tabs, selected, onSelect }: { tabs: Tab[]; selected: number; onSelect?: (id: number) => void; }) {
+function TabButtons({ tabs, selected, onSelect }: { tabs: Tab[]; selected: number; onSelect?: (id: number) => void; }) {
     return (<>
         {tabs.map((tab, idx) => (
             <button
@@ -37,12 +37,12 @@ const tabs: Tab[] = [
     { id: 3, name: 'Billing' },
 ];
 
-export function Tabs2() {
+export function Tabs() {
     const [active, setActive] = useState(0);
     return (
         <div className="m-3 p-4 bg-violet-600/40 border-violet-900/30 border rounded-md shadow">
             <nav className="isolate flex divide-x divide-violet-900 rounded-lg shadow" aria-label="Tabs">
-                <Tabs tabs={tabs} selected={active} onSelect={(id) => {
+                <TabButtons tabs={tabs} selected={active} onSelect={(id) => {
                     setActive(id);
                     console.log('selected', id);
                 }} />
