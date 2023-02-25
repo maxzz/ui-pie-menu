@@ -20,16 +20,13 @@ function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; })
         clickCapElm.parentElement!.querySelectorAll<HTMLElement>('.cell-cap')
             .forEach((cap) => {
                 const cnt = cap.nextElementSibling;
+                const v = cap.dataset;
                 if (cap === clickCapElm) {
                     cnt?.classList.toggle('hidden');
-                    if (cap.dataset.highlighted !== undefined) {
-                        delete cap.dataset.highlighted;
-                    } else {
-                        cap.dataset.highlighted = '';
-                    }
+                    v.highlighted ? delete v.highlighted : v.highlighted = '1';
                 } else {
                     cnt?.classList.add('hidden');
-                    delete cap.dataset.highlighted;
+                    delete v.highlighted;
                 }
             });
     }
