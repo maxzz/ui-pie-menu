@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSnapshot } from "valtio/react";
+import { appState } from "../store";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
@@ -38,12 +40,12 @@ const tabs: Tab[] = [
 ];
 
 export function Tabs() {
-    const [active, setActive] = useState(0);
+    const snap = useSnapshot(appState);
     return (
         <div className="m-3 p-4 bg-violet-600/40 border-violet-900/30 border rounded-md shadow">
             <nav className="isolate flex divide-x divide-violet-900 rounded-lg shadow" aria-label="Tabs">
-                <TabButtons tabs={tabs} selected={active} onSelect={(id) => {
-                    setActive(id);
+                <TabButtons tabs={tabs} selected={snap.activeTab} onSelect={(id) => {
+                    appState.activeTab = id;
                     console.log('selected', id);
                 }} />
             </nav>
