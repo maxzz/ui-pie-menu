@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSnapshot } from "valtio";
 import { appState } from "../store";
 
@@ -33,13 +32,14 @@ function TabButtons({ tabs, selected, onSelect }: { tabs: Tab[]; selected: numbe
 }
 
 const tabs: Tab[] = [
-    { id: 0, name: 'Rounded Tabs' },
-    { id: 1, name: 'Classic Tabs' },
-    { id: 2, name: 'Grid Preview' },
-    { id: 3, name: 'Pie Menu' },
+    { id: 1, name: 'Rounded Tabs' },
+    { id: 2, name: 'Classic Tabs' },
+    { id: 3, name: 'Grid Preview' },
+    { id: 4, name: 'Pie Menu' },
+    { id: 0, name: 'All' },
 ];
 
-export function Tabs() {
+export function Section1_Tabs() {
     const snap = useSnapshot(appState);
     return (
         <div className="m-3 p-4 bg-violet-600/40 border-violet-900/30 border rounded-md shadow">
