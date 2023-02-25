@@ -1,6 +1,6 @@
 export function PieMenu() {
     return (
-        <nav className=''>
+        <nav className='relative'>
             <input className='menu-toggler' id='menu-toggler' type='checkbox' />
             <label htmlFor='menu-toggler'></label>
             <ul>

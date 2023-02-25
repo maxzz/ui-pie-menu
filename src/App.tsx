@@ -1,11 +1,10 @@
 import { CSSProperties } from 'react';
-import { useSnapshot } from 'valtio';
+import { appState, useSnapshot } from './components/store';
+import { Section1_Tabs } from './components/Section1_Tabs';
+import { TabsControl } from './components/Tabs';
+import { TabsTwUI } from './components/TabsTwUI';
 import { GridPreview } from './components/GridPreview';
 import { PieMenu } from './components/PieMenu';
-import { appState } from './components/store';
-import { TabsControl } from './components/Tabs';
-import { Section1_Tabs } from './components/Section1_Tabs';
-import { TabsTwUI } from './components/TabsTwUI';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
     backgroundImage: 'radial-gradient(#0002 0.5px, #0000 0.5px)',
@@ -13,18 +12,21 @@ const styleDots: CSSProperties = { //https://daisyui.com/components/tab
 };
 
 export function App() {
-    const snap = useSnapshot(appState);
+    const { activeTab } = useSnapshot(appState);
     return (
-        <div className="h-screen bg-violet-700" style={styleDots}>
+        <div className="h-screen">
+            <div className="fixed inset-0 bg-violet-700" style={styleDots}></div>
+
             <div className="relative h-full grid grid-rows-[auto_2fr_1fr]">
                 <Section1_Tabs />
 
-                <div className="">
-                    {(snap.activeTab === 1 || snap.activeTab === 0) && <TabsControl />}
-                    {(snap.activeTab === 2 || snap.activeTab === 0) && <TabsTwUI />}
-                    {(snap.activeTab === 3 || snap.activeTab === 0) && <GridPreview />}
-                    {(snap.activeTab === 4 || snap.activeTab === 0) && <PieMenu />}
+                <div className={(activeTab === 4) ? 'hidden' : ''}>
+                    {(activeTab === 1 || activeTab === 0) && <TabsControl />}
+                    {(activeTab === 2 || activeTab === 0) && <TabsTwUI />}
+                    {(activeTab === 3 || activeTab === 0) && <GridPreview />}
                 </div>
+
+                {(activeTab === 4 || activeTab === 0) && <PieMenu />}
             </div>
         </div>
     );

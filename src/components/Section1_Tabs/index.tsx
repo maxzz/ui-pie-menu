@@ -1,5 +1,4 @@
-import { useSnapshot } from "valtio";
-import { appState } from "../store";
+import { appState, useSnapshot } from "../store";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
