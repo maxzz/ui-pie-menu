@@ -54,9 +54,9 @@ function Tabs() {
                             key={tab.name}
                             href={tab.href}
                             className={classNames(
-                                tab.current ? 'text-green-500' : 'text-green-500/50 hover:text-green-500',
                                 tabIdx === 0 ? 'rounded-l-lg' : '',
                                 tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
+                                tab.current ? 'text-green-500' : 'text-green-500/50 hover:text-green-500',
                                 'group relative min-w-0 flex-1 overflow-hidden py-4 px-4 focus:z-10',
                                 'text-sm font-medium text-center',
                                 'bg-violet-900/20  hover:bg-violet-900/50',

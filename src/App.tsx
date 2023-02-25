@@ -2,6 +2,7 @@ import { CSSProperties } from 'react';
 import { GridPreview } from './components/GridPreview';
 import { PieMenu } from './components/PieMenu';
 import { TabsControl } from './components/Tabs';
+import { Tabs2 } from './components/Tabs2';
 import { TabsTwUI } from './components/TabsTwUI';
 
 const styleDots: CSSProperties = { //https://daisyui.com/components/tab
@@ -15,6 +16,7 @@ export function App() {
             <div className="relative h-full grid grid-rows-[auto_auto_1fr_1fr]">
                 <TabsControl />
                 <TabsTwUI />
+                <Tabs2 />
                 <GridPreview />
                 <PieMenu />
             </div>
