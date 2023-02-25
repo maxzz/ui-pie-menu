@@ -44,6 +44,11 @@ $item-transition: 0.5s;
 //     background: linear-gradient(to right, #9c35fc, #bf0ab3);
 // }
 
+// .menu-toggler {
+//     position: absolute;
+//     inset: 0;
+// }
+
 .menu-toggler {
     @include absolute-center;
     @include size($toggler-size);
