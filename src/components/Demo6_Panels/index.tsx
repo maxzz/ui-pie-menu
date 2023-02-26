@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { HTMLAttributes, useState } from "react";
 import { allFlights } from "./data";
 import { IconBack, IconSettings } from "./UIIcons";
 import './styles.css';
+
+function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
+    return (
+        <div id="animContainer" {...props}>
+            <div id="anim">
+                <div id="circle" />
+                <div id="circle" />
+                <div id="circle" />
+            </div>
+        </div>
+    );
+}
 
 function Cell_01({ index }: { index: number; }) {
     return (
@@ -13,23 +25,13 @@ function Cell_01({ index }: { index: number; }) {
                 BLR
                 <div id="detailLabel">Kempegowda International</div>
             </div>
+
             <div id="flightDetail" style={{ marginTop: "15px" }}>
-                <div id="animContainer">
-                    <div id="anim">
-                        <div id="circle" />
-                        <div id="circle" />
-                        <div id="circle" />
-                    </div>
-                </div>
-                <div id="animContainer" style={{ left: "62px" }}>
-                    <div id="anim">
-                        <div id="circle" />
-                        <div id="circle" />
-                        <div id="circle" />
-                    </div>
-                </div>
+                <AnimDots />
+                <AnimDots style={{ left: "62px" }} />
                 <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
+            
             <div id="flightDetail">
                 <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     To
