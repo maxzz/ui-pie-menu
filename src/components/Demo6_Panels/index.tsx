@@ -1,40 +1,24 @@
 import { useState } from "react";
-import { Flight } from "./data";
+import { allFlights } from "./data";
 import './styles.css';
+import { IconSettings } from "./UIIcons";
 
-
-const Cell = (props: { index: number; }) => {
+function Cell(props: { index: number; }) {
     const { index } = props;
     const [active, handleActive] = useState(false);
 
     return (
-        <div
-            id="cardContainer"
-            style={{
-                height: active ? `300px` : `100px`,
-                transition: "0.9s"
-            }}
-            onClick={() => {
-                handleActive(!active);
-            }}
-        >
+        <div id="cardContainer" style={{ height: active ? `300px` : `100px`, transition: "0.9s" }} onClick={() => { handleActive(!active); }}>
+
             <div id="firstDisplay">
                 <div id="flightDetail">
-                    <div
-                        id="detailLabel"
-                        style={{ fontWeight: "bold", color: Flight[index].label }}
-                    >
+                    <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
                         From
                     </div>
                     BLR
                     <div id="detailLabel">Kempegowda International</div>
                 </div>
-                <div
-                    id="flightDetail"
-                    style={{
-                        marginTop: "15px"
-                    }}
-                >
+                <div id="flightDetail" style={{ marginTop: "15px" }}>
                     <div id="animContainer">
                         <div id="anim">
                             <div id="circle" />
@@ -51,13 +35,12 @@ const Cell = (props: { index: number; }) => {
                     </div>
                     <img
                         style={{ width: "30px" }}
-                        src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true"
-                    />
+                        src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
                 </div>
                 <div id="flightDetail">
                     <div
                         id="detailLabel"
-                        style={{ fontWeight: "bold", color: Flight[index].label }}
+                        style={{ fontWeight: "bold", color: allFlights[index].label }}
                     >
                         To
                     </div>
@@ -65,17 +48,10 @@ const Cell = (props: { index: number; }) => {
                     <div id="detailLabel">Indira Gandhi International</div>
                 </div>
             </div>
-            <div
-                id="first"
-                style={{
-                    transform: active
-                        ? `rotate3d(1, 0, 0, -180deg)`
-                        : `rotate3d(1, 0, 0, 0deg)`,
-                    transitionDelay: active ? "0s" : "0.3s"
-                }}
-            >
+
+            <div id="first" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0s" : "0.3s" }}>
                 <div id="firstTop">
-                    <img style={Flight[index].style} src={Flight[index].src} />
+                    <img style={allFlights[index].style} src={allFlights[index].src} />
                     <div id="timecontainer">
                         <div id="detailDate">
                             Bengaluru
@@ -99,6 +75,7 @@ const Cell = (props: { index: number; }) => {
                         </div>
                     </div>
                 </div>
+
                 <div id="firstBehind">
                     <div id="firstBehindDisplay">
                         <div id="firstBehindRow">
@@ -131,15 +108,8 @@ const Cell = (props: { index: number; }) => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        id="second"
-                        style={{
-                            transform: active
-                                ? `rotate3d(1, 0, 0, -180deg)`
-                                : `rotate3d(1, 0, 0, 0deg)`,
-                            transitionDelay: active ? "0.2s" : "0.2s"
-                        }}
-                    >
+
+                    <div id="second" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.2s" : "0.2s" }}>
                         <div id="secondTop" />
                         <div id="secondBehind">
                             <div id="secondBehindDisplay">
@@ -153,8 +123,7 @@ const Cell = (props: { index: number; }) => {
                                 </div>
                                 <img
                                     id="barCode"
-                                    src="https://github.com/pizza3/asset/blob/master/barcode.png?raw=true"
-                                />
+                                    src="https://github.com/pizza3/asset/blob/master/barcode.png?raw=true" />
                             </div>
                             <div
                                 id="third"
@@ -170,8 +139,8 @@ const Cell = (props: { index: number; }) => {
                                     <button
                                         id="button"
                                         style={{
-                                            color: Flight[index].label,
-                                            border: `1px solid ${Flight[index].label}`
+                                            color: allFlights[index].label,
+                                            border: `1px solid ${allFlights[index].label}`
                                         }}
                                     >
                                         Pay
@@ -180,21 +149,23 @@ const Cell = (props: { index: number; }) => {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     );
-};
+}
 
 
 const Header = (
     <div>
         <svg
-            id="back"
-            xmlns="http://www.w3.org/2000/svg"
+
             width="512"
             height="512"
             viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            id="back"
         >
             <polyline
                 points="244 400 100 256 244 112"
@@ -206,11 +177,7 @@ const Header = (
                     strokeWidth: "48px"
                 }}
             />
-            <line
-                x1="120"
-                y1="256"
-                x2="412"
-                y2="256"
+            <line x1="120" y1="256" x2="412" y2="256"
                 style={{
                     fill: "none",
                     stroke: "#000",
@@ -220,6 +187,7 @@ const Header = (
                 }}
             />
         </svg>
+
         <div id="headerText">Select Flight</div>
         <div id="tripDetail">
             Your Trip
@@ -229,128 +197,8 @@ const Header = (
             </div>
             12th June, 2020
         </div>
-        <svg
-            id="settings"
-            xmlns="http://www.w3.org/2000/svg"
-            width="512"
-            height="512"
-            viewBox="0 0 512 512"
-        >
-            <line
-                x1="368"
-                y1="128"
-                x2="448"
-                y2="128"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <line
-                x1="64"
-                y1="128"
-                x2="304"
-                y2="128"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <line
-                x1="368"
-                y1="384"
-                x2="448"
-                y2="384"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <line
-                x1="64"
-                y1="384"
-                x2="304"
-                y2="384"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <line
-                x1="208"
-                y1="256"
-                x2="448"
-                y2="256"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <line
-                x1="64"
-                y1="256"
-                x2="144"
-                y2="256"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <circle
-                cx="336"
-                cy="128"
-                r="32"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <circle
-                cx="176"
-                cy="256"
-                r="32"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-            <circle
-                cx="336"
-                cy="384"
-                r="32"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "32px"
-                }}
-            />
-        </svg>
+
+        <IconSettings />
     </div>
 );
 
@@ -358,7 +206,7 @@ const DataArr = Array(8)
     .fill(0)
     .map(Number.call, Number);
 
-export const Demo6_Panels = () => {
+export function Demo6_Panels() {
     return (
         <div className="demo6-panels">
             {Header}
@@ -367,4 +215,4 @@ export const Demo6_Panels = () => {
             ))}
         </div>
     );
-};
+}
