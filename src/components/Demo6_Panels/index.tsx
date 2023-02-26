@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { allFlights } from "./data";
+import { IconBack, IconSettings } from "./UIIcons";
 import './styles.css';
-import { IconSettings } from "./UIIcons";
 
 function Cell_01({ index }: { index: number; }) {
     return (
@@ -28,15 +28,10 @@ function Cell_01({ index }: { index: number; }) {
                         <div id="circle" />
                     </div>
                 </div>
-                <img
-                    style={{ width: "30px" }}
-                    src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
+                <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
             <div id="flightDetail">
-                <div
-                    id="detailLabel"
-                    style={{ fontWeight: "bold", color: allFlights[index].label }}
-                >
+                <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     To
                 </div>
                 DEL
@@ -163,34 +158,7 @@ function Cell(props: { index: number; }) {
 
 const Header = (
     <div>
-        <svg
-
-            width="512"
-            height="512"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-            id="back"
-        >
-            <polyline
-                points="244 400 100 256 244 112"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "48px"
-                }}
-            />
-            <line x1="120" y1="256" x2="412" y2="256"
-                style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    strokeWidth: "48px"
-                }}
-            />
-        </svg>
+        <IconBack />
 
         <div id="headerText">Select Flight</div>
         <div id="tripDetail">
@@ -206,16 +174,15 @@ const Header = (
     </div>
 );
 
-const DataArr = Array(8)
-    .fill(0)
-    .map(Number.call, Number);
+const arr = Array(8).fill(0).map(Number.call, Number);
+console.log(arr);
 
 export function Demo6_Panels() {
     return (
         <div className="demo6-panels">
             {Header}
-            {DataArr.map((val, i) => (
-                <Cell key={i} index={i} />
+            {arr.map((val, idx) => (
+                <Cell index={idx} key={idx} />
             ))}
         </div>
     );
