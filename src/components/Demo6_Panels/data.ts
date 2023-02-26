@@ -1,4 +1,13 @@
-export const Flight = [ //https://codepen.io/pizza3/pen/bGVPZvo
+export type Flight = {
+    src: string;
+    style: {
+        height: string;
+        margin: string;
+    };
+    label: string;
+};
+
+export const allFlights: Flight[] = [ //https://codepen.io/pizza3/pen/bGVPZvo https://t.me/codepen_amazing/717
     {
         src: "https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg",
         style: {
