@@ -27,9 +27,8 @@ export function App() {
                     {(activeTab === 2 || activeTab === 0) && <Demo2_TabsTwUI />}
                     {(activeTab === 3 || activeTab === 0) && <Demo3_GridPreview />}
                     {(activeTab === 4 || activeTab === 0) && <Demo5_Radio />}
+                    <Demo6_Panels />
                 </div>
-
-                <Demo6_Panels />
 
                 {(activeTab === 5 || activeTab === 0) && <Demo4_PieMenu />}
             </div>

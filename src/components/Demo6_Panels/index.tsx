@@ -31,7 +31,7 @@ function Cell_01({ index }: { index: number; }) {
                 <AnimDots style={{ left: "62px" }} />
                 <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
-            
+
             <div id="flightDetail">
                 <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     To
@@ -176,16 +176,18 @@ const Header = (
     </div>
 );
 
-const arr = Array(8).fill(0).map(Number.call, Number);
+const arr = Array(1).fill(0).map(Number.call, Number); //8
 console.log(arr);
 
 export function Demo6_Panels() {
     return (
-        <div className="demo6-panels">
-            {Header}
-            {arr.map((val, idx) => (
-                <Cell index={idx} key={idx} />
-            ))}
+        <div className="flex justify-center">
+            <div className="demo6-panels">
+                {Header}
+                {arr.map((val, idx) => (
+                    <Cell index={idx} key={idx} />
+                ))}
+            </div>
         </div>
     );
 }
