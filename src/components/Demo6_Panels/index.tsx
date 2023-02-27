@@ -18,7 +18,7 @@ function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
 function Cell_01({ index }: { index: number; }) {
     return (
         <div id="firstDisplay">
-            <div id="flightDetail">
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
                 <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     From
                 </div>
@@ -26,13 +26,13 @@ function Cell_01({ index }: { index: number; }) {
                 <div id="detailLabel">Kempegowda International</div>
             </div>
 
-            <div id="flightDetail" style={{ marginTop: "15px" }}>
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
                 <AnimDots />
                 <AnimDots style={{ left: "32px" }} />
                 <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
 
-            <div id="flightDetail">
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
                 <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     To
                 </div>
