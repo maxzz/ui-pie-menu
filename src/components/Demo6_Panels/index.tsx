@@ -3,47 +3,49 @@ import { allFlights } from "./data";
 import { IconBack, IconSettings } from "./UIIcons";
 import './styles.css';
 
-function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
-    return (
-        <div className="absolute pl-0 left-4 top-2 w-5 h-2 overflow-hidden" {...props}>
-            <div className="absolute w-14 flex [animation:dots-slidein_1s_infinite_linear]">
-                <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
-                <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
-                <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+namespace Utils {
+    export function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
+        return (
+            <div className="absolute pl-0 left-4 top-2 w-5 h-2 overflow-hidden" {...props}>
+                <div className="absolute w-14 flex [animation:dots-slidein_1s_infinite_linear]">
+                    <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+                    <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+                    <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+                </div>
             </div>
-        </div>
-    );
-}
+        );
+    }
 
-function InfoLabel({children, ...rest}: HTMLAttributes<HTMLDivElement>) {
-    return(
-        <div className="text-[10px] font-thin text-gray-500" {...rest}>{children}</div>
-    )
+    export function InfoLabel({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
+        return (
+            <div className="text-[10px] font-thin text-gray-500" {...rest}>{children}</div>
+        );
+    }
 }
 
 function Cell_01({ index }: { index: number; }) {
     return (
         <div id="firstDisplay">
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
+                <Utils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     From
-                </InfoLabel>
+                </Utils.InfoLabel>
                 BLR
-                <InfoLabel>Kempegowda International</InfoLabel>
+                <Utils.InfoLabel>Kempegowda International</Utils.InfoLabel>
             </div>
 
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
-                <AnimDots />
-                <AnimDots style={{ left: "32px" }} />
+                <Utils.AnimDots />
+                <Utils.AnimDots style={{ left: "32px" }} />
                 <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
 
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
+                <Utils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     To
-                </InfoLabel>
+                </Utils.InfoLabel>
                 DEL
-                <InfoLabel>Indira Gandhi International</InfoLabel>
+                <Utils.InfoLabel>Indira Gandhi International</Utils.InfoLabel>
             </div>
         </div>
     );
@@ -85,30 +87,30 @@ function Cell_03({ index }: { index: number; }) {
             <div id="firstBehindRow">
                 <div id="detail">
                     6:20 - 8:45
-                    <InfoLabel>Flight Time</InfoLabel>
+                    <Utils.InfoLabel>Flight Time</Utils.InfoLabel>
                 </div>
                 <div id="detail">
                     No
-                    <InfoLabel>Transfer</InfoLabel>
+                    <Utils.InfoLabel>Transfer</Utils.InfoLabel>
                 </div>
             </div>
             <div id="firstBehindRow">
                 <div id="detail">
                     2h 25 min
-                    <InfoLabel>Duration</InfoLabel>
+                    <Utils.InfoLabel>Duration</Utils.InfoLabel>
                 </div>
                 <div id="detail">
-                    8<InfoLabel>Gate</InfoLabel>
+                    8<Utils.InfoLabel>Gate</Utils.InfoLabel>
                 </div>
             </div>
             <div id="firstBehindRow">
                 <div id="detail">
                     5:35
-                    <InfoLabel>Boarding</InfoLabel>
+                    <Utils.InfoLabel>Boarding</Utils.InfoLabel>
                 </div>
                 <div id="detail">
                     20A
-                    <InfoLabel>Seat</InfoLabel>
+                    <Utils.InfoLabel>Seat</Utils.InfoLabel>
                 </div>
             </div>
         </div>
