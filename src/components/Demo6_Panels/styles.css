@@ -178,13 +178,6 @@
     font-size: 10px;
 }
 
-#flightDetail {
-    font-size: 23px;
-    font-weight: bold;
-    color: #3f3f3f;
-    flex: 0.5;
-}
-
 @keyframes dots-slidein {
     to {
         transform: translateX(-18px);
