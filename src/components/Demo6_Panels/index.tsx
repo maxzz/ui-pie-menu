@@ -15,15 +15,21 @@ function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
     );
 }
 
+function InfoLabel({children, ...rest}: HTMLAttributes<HTMLDivElement>) {
+    return(
+        <div className="text-[10px] font-thin text-gray-500" {...rest}>{children}</div>
+    )
+}
+
 function Cell_01({ index }: { index: number; }) {
     return (
         <div id="firstDisplay">
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
+                <InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     From
-                </div>
+                </InfoLabel>
                 BLR
-                <div id="detailLabel">Kempegowda International</div>
+                <InfoLabel>Kempegowda International</InfoLabel>
             </div>
 
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
@@ -33,11 +39,11 @@ function Cell_01({ index }: { index: number; }) {
             </div>
 
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <div id="detailLabel" style={{ fontWeight: "bold", color: allFlights[index].label }}>
+                <InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
                     To
-                </div>
+                </InfoLabel>
                 DEL
-                <div id="detailLabel">Indira Gandhi International</div>
+                <InfoLabel>Indira Gandhi International</InfoLabel>
             </div>
         </div>
     );
@@ -79,30 +85,30 @@ function Cell_03({ index }: { index: number; }) {
             <div id="firstBehindRow">
                 <div id="detail">
                     6:20 - 8:45
-                    <div id="detailLabel">Flight Time</div>
+                    <InfoLabel>Flight Time</InfoLabel>
                 </div>
                 <div id="detail">
                     No
-                    <div id="detailLabel">Transfer</div>
+                    <InfoLabel>Transfer</InfoLabel>
                 </div>
             </div>
             <div id="firstBehindRow">
                 <div id="detail">
                     2h 25 min
-                    <div id="detailLabel">Duration</div>
+                    <InfoLabel>Duration</InfoLabel>
                 </div>
                 <div id="detail">
-                    8<div id="detailLabel">Gate</div>
+                    8<InfoLabel>Gate</InfoLabel>
                 </div>
             </div>
             <div id="firstBehindRow">
                 <div id="detail">
                     5:35
-                    <div id="detailLabel">Boarding</div>
+                    <InfoLabel>Boarding</InfoLabel>
                 </div>
                 <div id="detail">
                     20A
-                    <div id="detailLabel">Seat</div>
+                    <InfoLabel>Seat</InfoLabel>
                 </div>
             </div>
         </div>
