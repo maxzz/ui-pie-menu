@@ -1,5 +1,5 @@
 import { classNames } from "../../utils";
-import { appState, useSnapshot } from "../../store";
+import { appState, Pages, useSnapshot } from "../../store";
 
 type Tab = { id: number; name: string; };
 
@@ -31,25 +31,24 @@ function TabButtons({ tabs, selected, onSelect }: { tabs: Tab[]; selected: numbe
 }
 
 const tabs: Tab[] = [
-    { id: 1, name: 'Rounded Tabs' },
-    { id: 2, name: 'Classic Tabs' },
-    { id: 3, name: 'Grid Preview' },
-    { id: 4, name: 'Radio' },
-    
-    // { id: 14, name: 'Radio' },
-    // { id: 15, name: 'Radio' },
-
-    { id: 5, name: 'Pie Menu' },
-    { id: 0, name: 'All' },
+    { id: Pages.tabsRounded, name: 'Rounded Tabs' },
+    { id: Pages.tabsTw, name: 'Classic Tabs' },
+    { id: Pages.grid, name: 'Grid Preview' },
+    { id: Pages.radio, name: 'Radio' },
+    { id: Pages.panels, name: 'Panels' },
+    { id: Pages.pieMenu, name: 'Pie Menu' },
+    { id: Pages.all, name: 'All' },
 ];
 
 export function Section1_Tabs() {
     const snap = useSnapshot(appState);
     return (
         <nav className="px-4 pt-4 pb-2 divide-violet-900 shadow isolate flex flex-wrap divide-x" aria-label="Tabs">
-            <TabButtons tabs={tabs} selected={snap.activeTab} onSelect={(id) => {
-                appState.activeTab = id;
-            }} />
+            <TabButtons
+                tabs={tabs}
+                selected={snap.activeTab}
+                onSelect={(id) => appState.activeTab = id}
+            />
         </nav>
     );
 }
