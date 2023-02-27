@@ -23,28 +23,32 @@
 }
 
 #settings {
+    position: absolute;
+    
     width: 26px;
     height: 26px;
-    position: absolute;
-    z-index: 10;
     top: 117px;
     right: 0px;
+
+    z-index: 10;
 }
 
 .demo6-panels {
+    width: 400px;
+    height: auto;
+    
+    perspective: 700px;
+
     font-family: sans-serif;
     text-align: center;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #fff;
-    box-shadow: 0px 0px 41px -7px rgba(0, 0, 0, 0.15);
-    width: 400px;
-    height: auto;
+    
     background: #f3f3f3;
-
-    perspective: 700px;
+    box-shadow: 0px 0px 41px -7px rgba(0, 0, 0, 0.15);
 }
 
 #headerText {
@@ -161,7 +165,7 @@
     padding: 18px 23px;
     flex-wrap: wrap;
     backface-visibility: hidden;
-    box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 25px -1px #0000002b;
 }
 
 #info {
@@ -257,7 +261,7 @@
     padding: 12px 23px;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0px 11px 25px -1px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 11px 25px -1px #0000002b;
 }
 
 #firstBehindRow {
@@ -310,6 +314,8 @@
     border-radius: 8px;
 }
 
+/* Second */
+
 #secondBehind {
     width: 340px;
     height: 50px;
@@ -334,7 +340,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 23px;
-    box-shadow: 0px 11px 25px -1px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 11px 25px -1px #0000002b;
 }
 
 #secondBehindBottom {
@@ -347,8 +353,10 @@
     backface-visibility: hidden;
     border-radius: 0px 0px 8px 8px;
     border-radius: 8px;
-    box-shadow: 0px 11px 25px -1px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 11px 25px -1px #0000002b;
 }
+
+/* Third */
 
 #third {
     width: 340px;
@@ -370,6 +378,8 @@
     border-radius: 4px;
     margin-top: 9px;
 }
+
+/*  */
 
 #price {
     color: #2d2d2d;

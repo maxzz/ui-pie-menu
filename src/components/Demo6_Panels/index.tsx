@@ -177,11 +177,10 @@ const Header = (
 );
 
 const arr = Array(1).fill(0).map(Number.call, Number); //8
-console.log(arr);
 
 export function Demo6_Panels() {
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center [perspective:700px]">
             <div className="demo6-panels">
                 {Header}
                 {arr.map((val, idx) => (
