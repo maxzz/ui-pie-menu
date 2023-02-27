@@ -5,11 +5,11 @@ import './styles.css';
 
 function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
     return (
-        <div id="animContainer" {...props}>
-            <div id="anim">
-                <div id="circle" />
-                <div id="circle" />
-                <div id="circle" />
+        <div className="absolute pl-0 left-4 top-2 w-5 h-2 overflow-hidden" {...props}>
+            <div className="absolute w-14 flex [animation:dots-slidein_1s_infinite_linear]">
+                <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+                <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+                <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
             </div>
         </div>
     );
@@ -28,7 +28,7 @@ function Cell_01({ index }: { index: number; }) {
 
             <div id="flightDetail" style={{ marginTop: "15px" }}>
                 <AnimDots />
-                <AnimDots style={{ left: "62px" }} />
+                <AnimDots style={{ left: "32px" }} />
                 <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
 

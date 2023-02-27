@@ -185,40 +185,15 @@
     flex: 0.5;
 }
 
-#animContainer {
-    padding-left: 0px;
-    position: absolute;
-    width: 19px;
-    height: 10px;
-    top: 10px;
-    left: 15px;
-    overflow: hidden;
-}
-
-#anim {
-    width: 54px;
-    position: absolute;
-    display: flex;
-    animation: slidein 1s infinite linear;
-}
-
-@keyframes slidein {
+@keyframes dots-slidein {
     to {
         transform: translateX(-18px);
     }
-
     from {
         transform: translateX(0px);
     }
 }
 
-#circle {
-    width: 5px;
-    height: 5px;
-    background: #707070;
-    border-radius: 50%;
-    margin-right: 13px;
-}
 #firstTop {
     width: 340px;
     height: 100px;
