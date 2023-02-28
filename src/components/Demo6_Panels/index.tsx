@@ -77,7 +77,15 @@ function Cell_02({ index }: { index: number; }) {
     );
 }
 
-namespace Row1 {
+namespace Row2 {
+    export function Detail({ children, title, ...rest }: HTMLAttributes<HTMLDivElement>) {
+        return (
+            <div className="text-[1rem] font-bold">
+                {children}
+                <Utils.InfoLabel>{title}</Utils.InfoLabel>
+            </div>
+        );
+    }
     export function FirstBehindRow({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
         return (
             <div className="mt-2 relative flex flex-col justify-between text-left" id="firstBehindRow">
@@ -90,35 +98,18 @@ namespace Row1 {
 function Cell_03({ index }: { index: number; }) {
     return (
         <div id="firstBehindDisplay">
-            <Row1.FirstBehindRow>
-                <div id="detail">
-                    6:20 - 8:45
-                    <Utils.InfoLabel>Flight Time</Utils.InfoLabel>
-                </div>
-                <div id="detail">
-                    No
-                    <Utils.InfoLabel>Transfer</Utils.InfoLabel>
-                </div>
-            </Row1.FirstBehindRow>
-            <Row1.FirstBehindRow>
-                <div id="detail">
-                    2h 25 min
-                    <Utils.InfoLabel>Duration</Utils.InfoLabel>
-                </div>
-                <div id="detail">
-                    8<Utils.InfoLabel>Gate</Utils.InfoLabel>
-                </div>
-            </Row1.FirstBehindRow>
-            <Row1.FirstBehindRow>
-                <div id="detail">
-                    5:35
-                    <Utils.InfoLabel>Boarding</Utils.InfoLabel>
-                </div>
-                <div id="detail">
-                    20A
-                    <Utils.InfoLabel>Seat</Utils.InfoLabel>
-                </div>
-            </Row1.FirstBehindRow>
+            <Row2.FirstBehindRow>
+                <Row2.Detail title="Flight Time">6:20 - 8:45</Row2.Detail>
+                <Row2.Detail title="Transfer">No</Row2.Detail>
+            </Row2.FirstBehindRow>
+            <Row2.FirstBehindRow>
+                <Row2.Detail title="Duration">2h 25 min</Row2.Detail>
+                <Row2.Detail title="Gate">8</Row2.Detail>
+            </Row2.FirstBehindRow>
+            <Row2.FirstBehindRow>
+                <Row2.Detail title="Boarding">5:35</Row2.Detail>
+                <Row2.Detail title="Seat">20A</Row2.Detail>
+            </Row2.FirstBehindRow>
         </div>
     );
 }
