@@ -154,18 +154,21 @@
     background: #0a0a0a;
 }
 #firstDisplay {
+    position: absolute;
+    padding: 18px 23px;
     width: 100%;
     height: 100px;
-    position: absolute;
+
+    backface-visibility: hidden;
+
     background: #fff;
     border-radius: 8px;
+    box-shadow: 0px 0px 25px -1px #0000002b;
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 18px 23px;
     flex-wrap: wrap;
-    backface-visibility: hidden;
-    box-shadow: 0px 0px 25px -1px #0000002b;
 }
 
 #info {
@@ -221,14 +224,16 @@
 }
 
 #firstBehindDisplay {
+    position: absolute;
+    padding: 12px 23px;
     width: 100%;
     height: 100px;
-    position: absolute;
-    background: #fff;
-    border-radius: 8px;
-    padding: 12px 23px;
+
     display: flex;
     justify-content: space-between;
+
+    background: #fff;
+    border-radius: 8px;
     box-shadow: 0px 11px 25px -1px #0000002b;
 }
 
@@ -293,16 +298,18 @@
 }
 
 #secondBehindDisplay {
+    position: absolute;
+    padding: 10px 23px;
     width: 100%;
     height: 50px;
-    position: absolute;
+
     background: #fff;
     border-radius: 8px;
     border-bottom: 1px dashed #d1d1d1;
+    box-shadow: 0px 11px 25px -1px #0000002b;
+    
     display: flex;
     justify-content: space-between;
-    padding: 10px 23px;
-    box-shadow: 0px 11px 25px -1px #0000002b;
 }
 
 #secondBehindBottom {

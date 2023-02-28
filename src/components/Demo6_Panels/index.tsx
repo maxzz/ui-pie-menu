@@ -27,9 +27,7 @@ function Cell_01({ index }: { index: number; }) {
     return (
         <div id="firstDisplay">
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <Utils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
-                    From
-                </Utils.InfoLabel>
+                <Utils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>From</Utils.InfoLabel>
                 BLR
                 <Utils.InfoLabel>Kempegowda International</Utils.InfoLabel>
             </div>
@@ -37,13 +35,11 @@ function Cell_01({ index }: { index: number; }) {
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
                 <Utils.AnimDots />
                 <Utils.AnimDots style={{ left: "32px" }} />
-                <img style={{ width: "30px" }} src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
+                <img className="w-8" src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
             </div>
 
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <Utils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>
-                    To
-                </Utils.InfoLabel>
+                <Utils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>To</Utils.InfoLabel>
                 DEL
                 <Utils.InfoLabel>Indira Gandhi International</Utils.InfoLabel>
             </div>
