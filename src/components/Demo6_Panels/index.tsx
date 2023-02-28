@@ -119,11 +119,11 @@ function Cell_04({ index, active }: { index: number; active: boolean; }) {
             <div id="secondTop" />
             <div id="secondBehind">
                 <div id="secondBehindDisplay">
-                    <div id="price">
+                    <div className="text-[1rem] font-bold">
                         $100
                         <div id="priceLabel">Price</div>
                     </div>
-                    <div id="price">
+                    <div className="text-[1rem] font-bold">
                         Economy
                         <div id="priceLabel">Class</div>
                     </div>
