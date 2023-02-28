@@ -307,7 +307,7 @@
     border-radius: 8px;
     border-bottom: 1px dashed #d1d1d1;
     box-shadow: 0px 11px 25px -1px #0000002b;
-    
+
     display: flex;
     justify-content: space-between;
 }
@@ -349,15 +349,6 @@
 }
 
 /*  */
-
-#price {
-    color: #2d2d2d;
-    font-weight: bold;
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    margin-top: -2px;
-}
 
 #priceLabel {
     color: #747474;
