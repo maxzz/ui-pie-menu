@@ -237,15 +237,6 @@
     box-shadow: 0px 11px 25px -1px #0000002b;
 }
 
-#firstBehindRow {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 7px;
-    text-align: left;
-}
-
 #detail {
     font-size: 15px;
     color: rgb(69, 69, 69);
@@ -335,29 +326,4 @@
     transform-style: preserve-3d;
     transition: 0.2s;
     border-radius: 8px;
-}
-
-#button {
-    color: #2d2d2d;
-    font-size: 19px;
-    font-weight: bold;
-    padding: 4px 124px;
-    border: 1px solid #2d2d2d;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 9px;
-}
-
-/*  */
-
-#priceLabel {
-    color: #747474;
-    font-weight: 100;
-    font-size: 10px;
-    text-align: left;
-}
-
-#barCode {
-    width: 98px;
-    height: 30px;
 }

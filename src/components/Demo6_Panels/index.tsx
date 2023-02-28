@@ -1,4 +1,4 @@
-import { HTMLAttributes, useState } from "react";
+import { Children, HTMLAttributes, useState } from "react";
 import { allFlights } from "./data";
 import { IconBack, IconSettings } from "./UIIcons";
 import './styles.css';
@@ -77,10 +77,20 @@ function Cell_02({ index }: { index: number; }) {
     );
 }
 
+namespace Row1 {
+    export function FirstBehindRow({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
+        return (
+            <div className="mt-2 relative flex flex-col justify-between text-left" id="firstBehindRow">
+                {children}
+            </div>
+        );
+    }
+}
+
 function Cell_03({ index }: { index: number; }) {
     return (
         <div id="firstBehindDisplay">
-            <div id="firstBehindRow">
+            <Row1.FirstBehindRow>
                 <div id="detail">
                     6:20 - 8:45
                     <Utils.InfoLabel>Flight Time</Utils.InfoLabel>
@@ -89,8 +99,8 @@ function Cell_03({ index }: { index: number; }) {
                     No
                     <Utils.InfoLabel>Transfer</Utils.InfoLabel>
                 </div>
-            </div>
-            <div id="firstBehindRow">
+            </Row1.FirstBehindRow>
+            <Row1.FirstBehindRow>
                 <div id="detail">
                     2h 25 min
                     <Utils.InfoLabel>Duration</Utils.InfoLabel>
@@ -98,8 +108,8 @@ function Cell_03({ index }: { index: number; }) {
                 <div id="detail">
                     8<Utils.InfoLabel>Gate</Utils.InfoLabel>
                 </div>
-            </div>
-            <div id="firstBehindRow">
+            </Row1.FirstBehindRow>
+            <Row1.FirstBehindRow>
                 <div id="detail">
                     5:35
                     <Utils.InfoLabel>Boarding</Utils.InfoLabel>
@@ -108,7 +118,7 @@ function Cell_03({ index }: { index: number; }) {
                     20A
                     <Utils.InfoLabel>Seat</Utils.InfoLabel>
                 </div>
-            </div>
+            </Row1.FirstBehindRow>
         </div>
     );
 }
@@ -121,18 +131,19 @@ function Cell_04({ index, active }: { index: number; active: boolean; }) {
                 <div id="secondBehindDisplay">
                     <div className="text-[1rem] font-bold">
                         $100
-                        <div id="priceLabel">Price</div>
+                        <Utils.InfoLabel style={{ textAlign: 'left' }}>Price</Utils.InfoLabel>
                     </div>
                     <div className="text-[1rem] font-bold">
                         Economy
-                        <div id="priceLabel">Class</div>
+                        <Utils.InfoLabel style={{ textAlign: 'left' }}>Class</Utils.InfoLabel>
                     </div>
-                    <img id="barCode" src="https://github.com/pizza3/asset/blob/master/barcode.png?raw=true" />
+                    <img className="w-24 h-8" src="https://github.com/pizza3/asset/blob/master/barcode.png?raw=true" />
                 </div>
+
                 <div id="third" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.4s" : "0s" }}>
                     <div id="thirdTop" />
                     <div id="secondBehindBottom">
-                        <button id="button" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
+                        <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
                             Pay
                         </button>
                     </div>
