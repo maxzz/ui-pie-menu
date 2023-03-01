@@ -65,7 +65,7 @@ function Cell_02({ index }: { index: number; }) {
             <img style={allFlights[index].style} src={allFlights[index].src} />
             <div id="timecontainer">
                 <Row0.Detail title1="Bengaluru" title2="6:20" title3="June 12" />
-                <img className="w-[30px] h-[26px] mx-4 mt-6" src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true"/>
+                <img className="w-[30px] h-[26px] mx-4 mt-6" src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
                 <Row0.Detail title1="New Delhi" title2="8:45" title3="June 12" />
             </div>
         </div>
@@ -120,6 +120,16 @@ namespace Row3 {
     }
 }
 
+namespace Row4 {
+    export function Detail({ index, ...rest }: HTMLAttributes<HTMLDivElement> & { index: number; }) {
+        return (
+            <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
+                Pay
+            </button>
+        );
+    }
+}
+
 function Cell_04({ index, active }: { index: number; active: boolean; }) {
     return (
         <div id="second" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.2s" : "0.2s" }}>
@@ -134,9 +144,7 @@ function Cell_04({ index, active }: { index: number; active: boolean; }) {
                 <div id="third" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.4s" : "0s" }}>
                     <div id="thirdTop" />
                     <div id="secondBehind__Bottom">
-                        <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
-                            Pay
-                        </button>
+                        <Row4.Detail index={index} />
                     </div>
                 </div>
             </div>
@@ -144,10 +152,8 @@ function Cell_04({ index, active }: { index: number; active: boolean; }) {
     );
 }
 
-function Cell(props: { index: number; }) {
-    const { index } = props;
+function Cell({index}: { index: number; }) {
     const [active, handleActive] = useState(false);
-
     return (
         <div id="cardContainer" style={{ height: active ? `300px` : `100px`, transition: "0.9s" }} onClick={() => { handleActive(!active); }}>
             <Cell_01 index={index} />
@@ -168,7 +174,7 @@ const Header = (
     <div>
         <IconBack />
 
-        <div id="headerText">Select Flight</div>
+        <div className="mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{wordSpacing: '2px'}}>Select Flight</div>
         <div id="tripDetail">
             Your Trip
             <div id="tripDest">
