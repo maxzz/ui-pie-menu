@@ -51,19 +51,6 @@
     box-shadow: 0px 0px 41px -7px rgba(0, 0, 0, 0.15);
 }
 
-#headerInput {
-    width: 340px;
-    height: 40px;
-    border: none;
-    background: #262626;
-    border-radius: 5px;
-    border: 1px solid rgb(81, 81, 81);
-    padding-top: 8px;
-    padding-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 #cardContainer {
     position: relative;
     width: 340px;
