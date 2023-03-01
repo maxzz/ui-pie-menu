@@ -179,7 +179,9 @@ const Header = (
             Your Trip
             <div className="text-3xl font-bold tracking-wide flex">
                 BLR - DEL
-                <div id="oneWay">One Way</div>
+                <div className="relative ml-2 mt-2 px-1.5 py-1 h-5 text-[10px] leading-[10px] font-thin text-white bg-blue-500 border-blue-600 border rounded">
+                    One Way
+                </div>
             <div />
             </div>
             12th June, 2020
