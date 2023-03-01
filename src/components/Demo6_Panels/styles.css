@@ -17,6 +17,7 @@
     width: 400px;
     height: auto;
     
+    position: relative;
     perspective: 700px;
 
     font-family: sans-serif;
@@ -35,32 +36,36 @@
     position: relative;
     width: 340px;
     height: 100px;
+    margin: 20px;
+
     /* background: rgb(194, 194, 194); */
     border-radius: 5px;
     transform-origin: bottom;
-    margin: 20px;
     cursor: pointer;
 }
 
 #first {
+    position: absolute;
     width: 340px;
     height: 100px;
-    position: absolute;
-    border-radius: 5px;
-    color: #000;
+
     transform-origin: bottom;
     transform-style: preserve-3d;
     transition: 0.5s;
-    border-radius: 8px;
-    display: flex;
     /* backface-visibility: hidden; */
+
+    border-radius: 5px;
+    color: #000;
+    border-radius: 8px;
+    
+    display: flex;
 }
 
 #firstDisplay {
     position: absolute;
-    padding: 18px 23px;
     width: 100%;
     height: 100px;
+    padding: 18px 23px;
 
     backface-visibility: hidden;
 
@@ -84,22 +89,25 @@
 }
 
 #firstTop {
+    position: absolute;
     width: 340px;
     height: 100px;
-    position: absolute;
+
     background: #ffffff;
     backface-visibility: hidden;
     border-radius: 8px;
     border-radius: 8px;
     box-shadow: 0px 0px 3px 0px #84848426;
+    
     display: flex;
     justify-content: space-around;
 }
 
 #firstBehind {
+    position: absolute;
     width: 340px;
     height: 100px;
-    position: absolute;
+
     background: #fff;
     transform-origin: center;
     transform: rotate3d(1, 0, 0, -180deg);
@@ -112,9 +120,9 @@
 
 #firstBehind__Display {
     position: absolute;
-    padding: 12px 23px;
     width: 100%;
     height: 100px;
+    padding: 12px 23px;
 
     display: flex;
     justify-content: space-between;
@@ -125,9 +133,10 @@
 }
 
 #second {
+    position: absolute;
     width: 340px;
     height: 50px;
-    position: absolute;
+
     bottom: -2px;
     transform-origin: bottom;
     transform-style: preserve-3d;
@@ -136,18 +145,20 @@
 }
 
 #secondTop {
+    position: absolute;
     width: 340px;
     height: 50px;
-    position: absolute;
+
     background: rgb(231, 231, 231);
     backface-visibility: hidden;
     border-radius: 8px;
 }
 
 #thirdTop {
+    position: absolute;
     width: 340px;
     height: 50px;
-    position: absolute;
+
     background: rgb(190, 190, 190);
     backface-visibility: hidden;
     border-radius: 8px;
@@ -156,9 +167,10 @@
 /* Second */
 
 #secondBehind {
+    position: absolute;
     width: 340px;
     height: 50px;
-    position: absolute;
+
     background: #fff;
     transform-origin: center;
     transform: rotate3d(1, 0, 0, -180deg);
@@ -171,9 +183,9 @@
 
 #secondBehind__Display {
     position: absolute;
-    padding: 10px 23px;
     width: 100%;
     height: 50px;
+    padding: 10px 23px;
 
     background: #fff;
     border-radius: 8px;
@@ -185,9 +197,10 @@
 }
 
 #secondBehind__Bottom {
+    position: absolute;
     width: 340px;
     height: 50px;
-    position: absolute;
+
     background: #fff;
     transform-origin: center;
     transform: rotate3d(1, 0, 0, -180deg);
@@ -200,9 +213,10 @@
 /* Third */
 
 #third {
+    position: absolute;
     width: 340px;
     height: 50px;
-    position: absolute;
+
     transform-origin: bottom;
     transform-style: preserve-3d;
     transition: 0.2s;
