@@ -177,9 +177,10 @@ const Header = (
         <div className="mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{wordSpacing: '2px'}}>Select Flight</div>
         <div className="my-8 text-[10px] flex flex-col text-left tracking-widest">
             Your Trip
-            <div id="tripDest">
-                BLR - DEL<div id="oneWay">One Way</div>
-                <div />
+            <div className="text-3xl font-bold tracking-wide flex">
+                BLR - DEL
+                <div id="oneWay">One Way</div>
+            <div />
             </div>
             12th June, 2020
         </div>

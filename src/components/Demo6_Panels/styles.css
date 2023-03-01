@@ -51,14 +51,6 @@
     box-shadow: 0px 0px 41px -7px rgba(0, 0, 0, 0.15);
 }
 
-#tripDest {
-    color: #141414;
-    font-weight: bold;
-    font-size: 28px;
-    letter-spacing: 1px;
-    display: flex;
-}
-
 #oneWay {
     font-size: 10px;
     font-weight: 100;
