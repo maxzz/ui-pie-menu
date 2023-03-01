@@ -203,12 +203,14 @@ const arr = Array(1).fill(0).map(Number.call, Number); //8
 
 export function Demo6_Panels() {
     return (
-        <div className="flex justify-center [perspective:700px]">
-            <div className="demo6-panels">
-                {Header}
-                {arr.map((val, idx) => (
-                    <Cell index={idx} key={idx} />
-                ))}
+        <div className="relative [perspective:700px]">
+            <div className="flex justify-center">
+                <div className="demo6-panels">
+                    {Header}
+                    {arr.map((val, idx) => (
+                        <Cell index={idx} key={idx} />
+                    ))}
+                </div>
             </div>
         </div>
     );
