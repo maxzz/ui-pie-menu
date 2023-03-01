@@ -175,7 +175,7 @@ const Header = (
         <IconBack />
 
         <div className="mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{wordSpacing: '2px'}}>Select Flight</div>
-        <div id="tripDetail">
+        <div className="my-8 text-[10px] flex flex-col text-left tracking-widest">
             Your Trip
             <div id="tripDest">
                 BLR - DEL<div id="oneWay">One Way</div>
