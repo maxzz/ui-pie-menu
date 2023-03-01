@@ -13,15 +13,6 @@
     background: #ededed;
 } */
 
-#back {
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    z-index: 10;
-    left: -4px;
-    top: 29px;
-}
-
 .demo6-panels {
     width: 400px;
     height: auto;

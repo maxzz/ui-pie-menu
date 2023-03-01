@@ -172,18 +172,21 @@ function Cell({ index }: { index: number; }) {
 
 const Header = (
     <div className="w-full">
-        <IconBack />
+        <div className="mx-8 flex items-center">
+            <IconBack className="mt-4 w-6 h-6" />
 
-        <div className="mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{ wordSpacing: '2px' }}>
-            Select Flight
+            <div className="flex-1 mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{ wordSpacing: '2px' }}>
+                Select Flight
+            </div>
         </div>
 
         <div className="mx-8 flex items-center justify-between">
-            <div className="my-4 text-[10px] flex flex-col text-left tracking-widest">
+
+            <div className="my-1 text-[10px] flex flex-col text-left tracking-widest">
                 Your Trip
-                <div className="text-[28px] leading-[28px] font-bold tracking-wide flex">
+                <div className="text-[28px] leading-[28px] font-bold tracking-wide flex items-center">
                     BLR - DEL
-                    <div className="relative ml-2 mt-2 px-1.5 py-1 h-5 text-[10px] leading-[10px] font-thin text-white bg-blue-500 border-blue-600 border rounded">
+                    <div className="relative ml-2 px-1.5 py-1 text-[10px] leading-[10px] font-thin text-white bg-blue-500 border-blue-600 border rounded">
                         One Way
                     </div>
                     <div />

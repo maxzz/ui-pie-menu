@@ -89,14 +89,14 @@ export function IconSettings(props: SVGAttributes<SVGSVGElement>) {
     );
 }
 
-export function IconBack() {
+export function IconBack(props: SVGAttributes<SVGSVGElement>) {
     return (
         <svg
             width="512"
             height="512"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
-            id="back"
+            {...props}
         >
             <polyline
                 points="244 400 100 256 244 112"
