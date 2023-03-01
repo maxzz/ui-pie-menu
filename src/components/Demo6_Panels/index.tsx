@@ -152,7 +152,7 @@ function Cell_04({ index, active }: { index: number; active: boolean; }) {
     );
 }
 
-function Cell({index}: { index: number; }) {
+function Cell({ index }: { index: number; }) {
     const [active, handleActive] = useState(false);
     return (
         <div id="cardContainer" style={{ height: active ? `300px` : `100px`, transition: "0.9s" }} onClick={() => { handleActive(!active); }}>
@@ -171,23 +171,28 @@ function Cell({index}: { index: number; }) {
 }
 
 const Header = (
-    <div>
+    <div className="w-full">
         <IconBack />
 
-        <div className="mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{wordSpacing: '2px'}}>Select Flight</div>
-        <div className="my-8 text-[10px] flex flex-col text-left tracking-widest">
-            Your Trip
-            <div className="text-3xl font-bold tracking-wide flex">
-                BLR - DEL
-                <div className="relative ml-2 mt-2 px-1.5 py-1 h-5 text-[10px] leading-[10px] font-thin text-white bg-blue-500 border-blue-600 border rounded">
-                    One Way
-                </div>
-            <div />
-            </div>
-            12th June, 2020
+        <div className="mt-8 h-12 text-xl font-bold text-center tracking-wider" style={{ wordSpacing: '2px' }}>
+            Select Flight
         </div>
 
-        <IconSettings />
+        <div className="mx-8 flex items-center justify-between">
+            <div className="my-4 text-[10px] flex flex-col text-left tracking-widest">
+                Your Trip
+                <div className="text-[28px] leading-[28px] font-bold tracking-wide flex">
+                    BLR - DEL
+                    <div className="relative ml-2 mt-2 px-1.5 py-1 h-5 text-[10px] leading-[10px] font-thin text-white bg-blue-500 border-blue-600 border rounded">
+                        One Way
+                    </div>
+                    <div />
+                </div>
+                12th June, 2020
+            </div>
+
+            <IconSettings className="w-6 h-6" />
+        </div>
     </div>
 );
 

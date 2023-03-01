@@ -22,17 +22,6 @@
     top: 29px;
 }
 
-#settings {
-    position: absolute;
-    
-    width: 26px;
-    height: 26px;
-    top: 117px;
-    right: 0px;
-
-    z-index: 10;
-}
-
 .demo6-panels {
     width: 400px;
     height: auto;

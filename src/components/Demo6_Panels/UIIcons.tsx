@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { SVGAttributes } from 'react';
 
-export function IconSettings() {
+export function IconSettings(props: SVGAttributes<SVGSVGElement>) {
     return (
-        <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="settings">
+        <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" {...props}>
             <line x1="368" y1="128" x2="448" y2="128"
                 style={{
                     fill: "none",
