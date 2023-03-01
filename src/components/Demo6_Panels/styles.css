@@ -56,13 +56,6 @@
     /* backface-visibility: hidden; */
 }
 
-#detailSub {
-    width: 200px;
-    height: 100px;
-    position: relative;
-    border-radius: 0px 8px 8px 0px;
-    background: #0a0a0a;
-}
 #firstDisplay {
     position: absolute;
     padding: 18px 23px;
