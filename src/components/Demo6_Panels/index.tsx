@@ -62,8 +62,8 @@ namespace Row0 {
 function Cell_02({ index }: { index: number; }) {
     return (
         <div id="firstTop">
-            <img style={allFlights[index].style} src={allFlights[index].src} />
-            <div id="timecontainer">
+            <img src={allFlights[index].src} style={allFlights[index].style} />
+            <div className="pr-3 pt-3 flex">
                 <Row0.Detail title1="Bengaluru" title2="6:20" title3="June 12" />
                 <img className="w-[30px] h-[26px] mx-4 mt-6" src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
                 <Row0.Detail title1="New Delhi" title2="8:45" title3="June 12" />

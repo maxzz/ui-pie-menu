@@ -96,12 +96,6 @@
     justify-content: space-around;
 }
 
-#timecontainer {
-    display: flex;
-    padding-right: 10px;
-    padding-top: 14px;
-}
-
 #firstBehind {
     width: 340px;
     height: 100px;
