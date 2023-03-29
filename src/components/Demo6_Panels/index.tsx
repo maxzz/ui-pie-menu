@@ -1,6 +1,8 @@
 import { HTMLAttributes, useState } from "react";
 import { allFlights } from "./data";
 import { IconBack, IconSettings } from "./UIIcons";
+import ImageBarcode from '../../assets/demo-parts/barcode.png';
+import ImageAirplane from '../../assets/demo-parts/airplane2.png';
 import './styles.css';
 
 namespace SharedUtils {
@@ -35,7 +37,7 @@ function Card_01_Open({ index }: { index: number; }) {
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
                 <SharedUtils.AnimDots />
                 <SharedUtils.AnimDots style={{ left: "32px" }} />
-                <img className="w-8" src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
+                <img className="w-8" src={ImageAirplane} />
             </div>
 
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
@@ -53,7 +55,7 @@ function Card_01_closed({ index }: { index: number; }) {
             <img src={allFlights[index].src} style={allFlights[index].style} />
             <div className="pr-3 pt-3 flex">
                 <Detail title1="San Francisco" title2="6:20" title3="June 12" />
-                <img className="w-[30px] h-[26px] mx-4 mt-6" src="https://github.com/pizza3/asset/blob/master/airplane2.png?raw=true" />
+                <img className="w-[30px] h-[26px] mx-4 mt-6" src={ImageAirplane} />
                 <Detail title1="New Delhi" title2="8:45" title3="June 12" />
             </div>
         </div>
@@ -132,7 +134,7 @@ function Card_03_open({ index, active }: { index: number; active: boolean; }) {
                 <div id="secondBehind__Display">
                     <Detail title="Price">$100</Detail>
                     <Detail title="Class">Economy</Detail>
-                    <img className="w-24 h-8" src="https://github.com/pizza3/asset/blob/master/barcode.png?raw=true" />
+                    <img className="w-24 h-8" src={ImageBarcode} />
                 </div>
 
                 <Card_04_open index={index} active={active} />
