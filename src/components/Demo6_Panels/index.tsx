@@ -5,8 +5,36 @@ import ImageBarcode from '../../assets/demo-parts/barcode.png';
 import ImageAirplane from '../../assets/demo-parts/airplane2.png';
 import './styles.css';
 
-namespace SharedUtils {
-    export function AnimDots(props: HTMLAttributes<HTMLDivElement>) {
+function SmallInfoText({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
+    return (
+        <div className="text-[10px] font-thin text-gray-500" {...rest}>{children}</div>
+    );
+}
+
+function Card_01_Open({ index }: { index: number; }) {
+    return (
+        <div id="card-01-open">
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
+                <SmallInfoText style={{ fontWeight: "bold", color: allFlights[index].label }}>From</SmallInfoText>
+                SFO
+                <SmallInfoText>San Francisco International</SmallInfoText>
+            </div>
+
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
+                <DotsAnimation />
+                <DotsAnimation style={{ left: "32px" }} />
+                <img className="w-8" src={ImageAirplane} />
+            </div>
+
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
+                <SmallInfoText style={{ fontWeight: "bold", color: allFlights[index].label }}>To</SmallInfoText>
+                DEL
+                <SmallInfoText>Indira Gandhi International</SmallInfoText>
+            </div>
+        </div>
+    );
+
+    function DotsAnimation(props: HTMLAttributes<HTMLDivElement>) {
         return (
             <div className="absolute pl-0 left-4 top-2 w-5 h-2 overflow-hidden" {...props}>
                 <div className="absolute w-14 flex [animation:dots-slidein_1s_infinite_linear]">
@@ -17,36 +45,6 @@ namespace SharedUtils {
             </div>
         );
     }
-
-    export function InfoLabel({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
-        return (
-            <div className="text-[10px] font-thin text-gray-500" {...rest}>{children}</div>
-        );
-    }
-}
-
-function Card_01_Open({ index }: { index: number; }) {
-    return (
-        <div id="card-01-open">
-            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <SharedUtils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>From</SharedUtils.InfoLabel>
-                SFO
-                <SharedUtils.InfoLabel>San Francisco International</SharedUtils.InfoLabel>
-            </div>
-
-            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
-                <SharedUtils.AnimDots />
-                <SharedUtils.AnimDots style={{ left: "32px" }} />
-                <img className="w-8" src={ImageAirplane} />
-            </div>
-
-            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <SharedUtils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>To</SharedUtils.InfoLabel>
-                DEL
-                <SharedUtils.InfoLabel>Indira Gandhi International</SharedUtils.InfoLabel>
-            </div>
-        </div>
-    );
 }
 
 function Card_01_closed({ index }: { index: number; }) {
@@ -94,7 +92,7 @@ function Card_02_open({ index }: { index: number; }) {
         return (
             <div className="text-[1rem] font-bold">
                 {children}
-                <SharedUtils.InfoLabel>{title}</SharedUtils.InfoLabel>
+                <SmallInfoText>{title}</SmallInfoText>
             </div>
         );
     }
@@ -146,7 +144,7 @@ function Card_03_open({ index, active }: { index: number; active: boolean; }) {
         return (
             <div className="text-[1rem] font-bold">
                 {children}
-                <SharedUtils.InfoLabel style={{ textAlign: 'left' }}>{title}</SharedUtils.InfoLabel>
+                <SmallInfoText style={{ textAlign: 'left' }}>{title}</SmallInfoText>
             </div>
         );
     }
