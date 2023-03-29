@@ -18,7 +18,7 @@
     height: auto;
 
     /* position: relative; */
-    perspective: 700px;
+    /* perspective: 700px; */
     /* transform-style: preserve-3d; */
 
     font-family: sans-serif;
@@ -34,6 +34,8 @@
 }
 
 #cardContainer {
+    perspective: 700px; /* dont' use overflow:hidden; it will kill perspective */
+
     position: relative;
     width: 340px;
     height: 100px;
@@ -222,29 +224,4 @@
     transform-style: preserve-3d;
     transition: 0.2s;
     border-radius: 8px;
-}
-
-
-
-
-
-
-
-
-.perspective-50 {
-    perspective: 50px;
-}
-
-.perspective-100 {
-    perspective: 100px;
-}
-
-.transform-rotate-x {
-    background-color: #f498ad;
-    transform: rotateX(50deg);
-}
-
-.transform-rotate-y {
-    background-color: #2e9aff;
-    transform: rotateY(20deg);
 }
