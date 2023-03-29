@@ -31,6 +31,6 @@ export const appState = proxy<{
     activeTab: Pages,
     filter: Filter;
 }>({
-    activeTab: Pages.all,
+    activeTab: Pages.panels,
     filter: "pending",
 });

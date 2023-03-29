@@ -205,6 +205,19 @@ export function Demo6_Panels() {
     return (
         <div className="relative [perspective:700px]">
             <div className="flex justify-center">
+
+                <div className="parent perspective-50">
+                    <div className="transform-rotate-x">
+                        Перспектива 50 градусов по <i>x</i>
+                    </div>
+                </div>
+
+                <div className="parent perspective-100">
+                    <div className="transform-rotate-y">
+                        Перспектива 20 градусов по <i>y</i>
+                    </div>
+                </div>
+
                 <div className="demo6-panels">
                     {Header}
                     {arr.map((val, idx) => (

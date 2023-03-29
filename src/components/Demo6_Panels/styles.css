@@ -16,18 +16,19 @@
 .demo6-panels {
     width: 400px;
     height: auto;
-    
-    position: relative;
+
+    /* position: relative; */
     perspective: 700px;
+    /* transform-style: preserve-3d; */
 
     font-family: sans-serif;
     text-align: center;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
+
     background: #f3f3f3;
     box-shadow: 0px 0px 41px -7px rgba(0, 0, 0, 0.15);
 }
@@ -57,7 +58,7 @@
     border-radius: 5px;
     color: #000;
     border-radius: 8px;
-    
+
     display: flex;
 }
 
@@ -72,7 +73,7 @@
     background: #fff;
     border-radius: 8px;
     box-shadow: 0px 0px 25px -1px #0000002b;
-    
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -98,7 +99,7 @@
     border-radius: 8px;
     border-radius: 8px;
     box-shadow: 0px 0px 3px 0px #84848426;
-    
+
     display: flex;
     justify-content: space-around;
 }
@@ -221,4 +222,29 @@
     transform-style: preserve-3d;
     transition: 0.2s;
     border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+.perspective-50 {
+    perspective: 50px;
+}
+
+.perspective-100 {
+    perspective: 100px;
+}
+
+.transform-rotate-x {
+    background-color: #f498ad;
+    transform: rotateX(50deg);
+}
+
+.transform-rotate-y {
+    background-color: #2e9aff;
+    transform: rotateY(20deg);
 }
