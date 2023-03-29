@@ -103,25 +103,6 @@ function Card_02_open({ index }: { index: number; }) {
     }
 }
 
-function Card_04_open({ index, active }: { index: number; active: boolean; }) {
-    return (
-        <div id="third" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.4s" : "0s" }}>
-            <div id="thirdTop" />
-            <div id="secondBehind__Bottom">
-                <Detail index={index} />
-            </div>
-        </div>
-    );
-
-    function Detail({ index, ...rest }: HTMLAttributes<HTMLDivElement> & { index: number; }) {
-        return (
-            <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
-                Pay
-            </button>
-        );
-    }
-}
-
 function Card_03_open({ index, active }: { index: number; active: boolean; }) {
     return (
         <div id="second" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.2s" : "0.2s" }}>
@@ -148,10 +129,33 @@ function Card_03_open({ index, active }: { index: number; active: boolean; }) {
     }
 }
 
+function Card_04_open({ index, active }: { index: number; active: boolean; }) {
+    return (
+        <div id="third" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.4s" : "0s" }}>
+            <div id="thirdTop" />
+            <div id="secondBehind__Bottom">
+                <Detail index={index} />
+            </div>
+        </div>
+    );
+
+    function Detail({ index, ...rest }: HTMLAttributes<HTMLDivElement> & { index: number; }) {
+        return (
+            <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
+                Pay
+            </button>
+        );
+    }
+}
+
 function AllCards({ index }: { index: number; }) {
     const [active, handleActive] = useState(false);
     return (
-        <div id="cardContainer" style={{ height: active ? `300px` : `100px`, transition: "0.9s" }} onClick={() => { handleActive(!active); }}>
+        <div
+            id="cards-container"
+            style={{ height: active ? `300px` : `100px`, transition: "0.9s" }} // background animation
+            onClick={() => { handleActive(!active); }}
+        >
             <Card_01_Open index={index} />
 
             <div id="first" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0s" : "0.3s" }}>
