@@ -64,7 +64,8 @@
     display: flex;
 }
 
-#firstDisplay {
+/* #firstDisplay */
+#card-01-open {
     position: absolute;
     width: 100%;
     height: 100px;
@@ -91,7 +92,8 @@
     }
 }
 
-#firstTop {
+/* #firstTop */
+#card-01-closed {
     position: absolute;
     width: 340px;
     height: 100px;
@@ -121,7 +123,8 @@
     border-right: none;
 }
 
-#firstBehind__Display {
+/* #firstBehind__Display */
+#card-02-open {
     position: absolute;
     width: 100%;
     height: 100px;

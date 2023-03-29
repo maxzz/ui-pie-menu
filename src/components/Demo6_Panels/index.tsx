@@ -25,7 +25,7 @@ namespace SharedUtils {
 
 function Card_01_Open({ index }: { index: number; }) {
     return (
-        <div id="firstDisplay">
+        <div id="card-01-open">
             <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
                 <SharedUtils.InfoLabel style={{ fontWeight: "bold", color: allFlights[index].label }}>From</SharedUtils.InfoLabel>
                 SFO
@@ -49,7 +49,7 @@ function Card_01_Open({ index }: { index: number; }) {
 
 function Card_01_closed({ index }: { index: number; }) {
     return (
-        <div id="firstTop">
+        <div id="card-01-closed">
             <img src={allFlights[index].src} style={allFlights[index].style} />
             <div className="pr-3 pt-3 flex">
                 <Detail title1="San Francisco" title2="6:20" title3="June 12" />
@@ -72,7 +72,7 @@ function Card_01_closed({ index }: { index: number; }) {
 
 function Card_02_open({ index }: { index: number; }) {
     return (
-        <div id="firstBehind__Display">
+        <div id="card-02-open">
             <Column>
                 <Detail title="Flight Time">6:20 - 8:45</Detail>
                 <Detail title="Transfer">No</Detail>
@@ -105,41 +105,47 @@ function Card_02_open({ index }: { index: number; }) {
     }
 }
 
+function Card_04_open({ index, active }: { index: number; active: boolean; }) {
+    return (
+        <div id="third" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.4s" : "0s" }}>
+            <div id="thirdTop" />
+            <div id="secondBehind__Bottom">
+                <Detail index={index} />
+            </div>
+        </div>
+    );
+
+    function Detail({ index, ...rest }: HTMLAttributes<HTMLDivElement> & { index: number; }) {
+        return (
+            <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
+                Pay
+            </button>
+        );
+    }
+}
+
 function Card_03_open({ index, active }: { index: number; active: boolean; }) {
     return (
         <div id="second" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.2s" : "0.2s" }}>
             <div id="secondTop" />
             <div id="secondBehind">
                 <div id="secondBehind__Display">
-                    <Row3_Detail title="Price">$100</Row3_Detail>
-                    <Row3_Detail title="Class">Economy</Row3_Detail>
+                    <Detail title="Price">$100</Detail>
+                    <Detail title="Class">Economy</Detail>
                     <img className="w-24 h-8" src="https://github.com/pizza3/asset/blob/master/barcode.png?raw=true" />
                 </div>
 
-                <div id="third" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.4s" : "0s" }}>
-                    <div id="thirdTop" />
-                    <div id="secondBehind__Bottom">
-                        <Card_04_open index={index} />
-                    </div>
-                </div>
+                <Card_04_open index={index} active={active} />
             </div>
         </div>
     );
 
-    function Row3_Detail({ children, title, ...rest }: HTMLAttributes<HTMLDivElement>) {
+    function Detail({ children, title, ...rest }: HTMLAttributes<HTMLDivElement>) {
         return (
             <div className="text-[1rem] font-bold">
                 {children}
                 <SharedUtils.InfoLabel style={{ textAlign: 'left' }}>{title}</SharedUtils.InfoLabel>
             </div>
-        );
-    }
-
-    function Card_04_open({ index, ...rest }: HTMLAttributes<HTMLDivElement> & { index: number; }) {
-        return (
-            <button className="mt-2 px-32 py-1 text-xl font-bold rounded" style={{ color: allFlights[index].label, border: `1px solid ${allFlights[index].label}` }}>
-                Pay
-            </button>
         );
     }
 }
@@ -162,7 +168,7 @@ function AllCards({ index }: { index: number; }) {
     );
 }
 
-const Header = (
+const Card_00_header = (
     <div className="w-full">
         <div className="mx-8 flex items-center">
             <IconBack className="mt-4 w-6 h-6" />
@@ -198,7 +204,7 @@ export function Demo6_Panels() {
         <div className="relative [perspective:700px]">
             <div className="flex justify-center">
                 <div className="demo6-panels">
-                    {Header}
+                    {Card_00_header}
                     {arr.map((val, idx) => (
                         <AllCards index={idx} key={idx} />
                     ))}
