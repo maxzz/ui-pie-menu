@@ -1,8 +1,6 @@
 import { HTMLAttributes, useState } from "react";
 import { allFlights } from "./data";
-import { IconBack, IconSettings } from "./UIIcons";
-import ImageBarcode from '../../assets/demo-parts/barcode.png';
-import ImageAirplane from '../../assets/demo-parts/airplane2.png';
+import { IconBack, IconSettings, ImageAirplane, ImageBarcode } from "./UIIcons";
 import './styles.css';
 
 function SmallInfoText({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {

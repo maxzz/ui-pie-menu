@@ -114,3 +114,9 @@ export function IconBack(props: SVGAttributes<SVGSVGElement>) {
         </svg>
     );
 }
+
+import ImageBarcode_ from '../../assets/demo-parts/barcode.png';
+import ImageAirplane_ from '../../assets/demo-parts/airplane2.png';
+
+export const ImageBarcode = ImageBarcode_;
+export const ImageAirplane = ImageAirplane_;
