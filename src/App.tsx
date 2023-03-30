@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { appState, Pages, useSnapshot } from './store';
+import { appState, AppPage, useSnapshot } from './store';
 import { Demo1_TabsRounded } from './components/Demo1_TabsRounded';
 import { Demo2_TabsTwUI } from './components/Demo2_TabsTwUI';
 import { Demo3_GridPreview } from './components/Demo3_GridPreview';
@@ -23,14 +23,14 @@ export function App() {
                 <Section1_Tabs />
 
                 <div className={(activeTab === 5) ? 'hidden' : ''}>
-                    {(activeTab === Pages.tabsRounded || activeTab === Pages.all) && <Demo1_TabsRounded />}
-                    {(activeTab === Pages.tabsTw || activeTab === Pages.all) && <Demo2_TabsTwUI />}
-                    {(activeTab === Pages.grid || activeTab === Pages.all) && <Demo3_GridPreview />}
-                    {(activeTab === Pages.radio || activeTab === Pages.all) && <Demo5_Radio />}
-                    {(activeTab === Pages.panels || activeTab === Pages.all) && <Demo6_Panels />}
+                    {(activeTab === AppPage.tabsRounded || activeTab === AppPage.all) && <Demo1_TabsRounded />}
+                    {(activeTab === AppPage.tabsTw || activeTab === AppPage.all) && <Demo2_TabsTwUI />}
+                    {(activeTab === AppPage.grid || activeTab === AppPage.all) && <Demo3_GridPreview />}
+                    {(activeTab === AppPage.radio || activeTab === AppPage.all) && <Demo5_Radio />}
+                    {(activeTab === AppPage.panels || activeTab === AppPage.all) && <Demo6_Panels />}
                 </div>
 
-                {(activeTab === Pages.pieMenu || activeTab === Pages.all) && <Demo4_PieMenu />}
+                {(activeTab === AppPage.pieMenu || activeTab === AppPage.all) && <Demo4_PieMenu />}
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import { classNames } from "../../utils";
-import { appState, Pages, useSnapshot } from "../../store";
+import { appState, AppPage, useSnapshot } from "../../store";
 
 type Tab = { id: number; name: string; };
 
@@ -31,13 +31,13 @@ function TabButtons({ tabs, selected, onSelect }: { tabs: Tab[]; selected: numbe
 }
 
 const tabs: Tab[] = [
-    { id: Pages.tabsRounded, name: 'Rounded Tabs' },
-    { id: Pages.tabsTw, name: 'Classic Tabs' },
-    { id: Pages.grid, name: 'Grid Preview' },
-    { id: Pages.radio, name: 'Radio' },
-    { id: Pages.panels, name: 'Panels' },
-    { id: Pages.pieMenu, name: 'Pie Menu' },
-    { id: Pages.all, name: 'All' },
+    { id: AppPage.tabsRounded, name: 'Rounded Tabs' },
+    { id: AppPage.tabsTw, name: 'Classic Tabs' },
+    { id: AppPage.grid, name: 'Grid Preview' },
+    { id: AppPage.radio, name: 'Radio' },
+    { id: AppPage.panels, name: 'Panels' },
+    { id: AppPage.pieMenu, name: 'Pie Menu' },
+    { id: AppPage.all, name: 'All' },
 ];
 
 export function Section1_Tabs() {

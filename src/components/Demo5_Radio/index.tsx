@@ -1,10 +1,10 @@
 import { Fragment } from "react";
-import { appState, demo5, useSnapshot } from "../../store";
+import { appState, demoRadio, useSnapshot } from "../../store";
 
 function Filters() {
     const snap = useSnapshot(appState);
     return (<>
-        {demo5.filterValues.map((filter: demo5.Filter) => (
+        {demoRadio.filterValues.map((filter: demoRadio.Filter) => (
             <Fragment key={filter}>
                 <label className="space-x-1">
                     <input

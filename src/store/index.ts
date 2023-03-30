@@ -3,7 +3,7 @@ export { useSnapshot } from "valtio";
 
 // Pages
 
-export const enum Pages {
+export const enum AppPage {
     all,
     tabsRounded,
     tabsTw,
@@ -13,7 +13,7 @@ export const enum Pages {
     panels,
 }
 
-export namespace demo5 {
+export namespace demoRadio {
     // Filters
 
     type Status = "pending" | "completed";
@@ -28,12 +28,12 @@ const STORE_KEY = 'ui-pie-menu';
 const STORE_VER = 'v1';
 
 type AppState = {
-    activeTab: Pages,
-    filter: demo5.Filter;
+    activeTab: AppPage,
+    filter: demoRadio.Filter;
 };
 
 const initialState: AppState = {
-    activeTab: Pages.radio,
+    activeTab: AppPage.radio,
     filter: "pending",
 };
 
