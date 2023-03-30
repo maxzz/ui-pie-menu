@@ -82,15 +82,6 @@
     flex-wrap: wrap;
 }
 
-@keyframes dots-slidein {
-    to {
-        transform: translateX(-18px);
-    }
-    from {
-        transform: translateX(0px);
-    }
-}
-
 /* #firstTop */
 #card-01-closed {
     position: absolute;
@@ -231,4 +222,13 @@
     transition: 0.2s;
 
     border-radius: 8px;
+}
+
+@keyframes dots-slidein {
+    to {
+        transform: translateX(-16px);
+    }
+    from {
+        transform: translateX(0px);
+    }
 }

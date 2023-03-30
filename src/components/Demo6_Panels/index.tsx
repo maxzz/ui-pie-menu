@@ -1,4 +1,4 @@
-import { HTMLAttributes, useState } from "react";
+import { HTMLAttributes, ReactNode, useState } from "react";
 import { allFlights } from "./data";
 import { IconBack, IconSettings, ImageAirplane, ImageBarcode } from "./UIIcons";
 import './styles.css';
@@ -10,35 +10,44 @@ function SmallInfoText({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
 }
 
 function Card_01_Open({ index }: { index: number; }) {
+    const airportColor = allFlights[index].label;
     return (
         <div id="card-01-open">
-            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
-                <SmallInfoText style={{ fontWeight: "bold", color: allFlights[index].label }}>From</SmallInfoText>
+            <Column>
+                <SmallInfoText style={{ fontWeight: "bold", color: airportColor }}>From</SmallInfoText>
                 SFO
                 <SmallInfoText>San Francisco International</SmallInfoText>
-            </div>
+            </Column>
 
-            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" style={{ marginTop: "15px" }}>
-                <DotsAnimation />
-                <DotsAnimation style={{ left: "32px" }} />
-                <img className="w-8" src={ImageAirplane} />
-            </div>
+            <Column style={{ position: 'relative', marginTop: "20px" }}>
+                <DotsAnimation style={{ left: "2px", width: '32px' }} />
+                <DotsAnimation style={{ left: "64px", width: '30px' }} />
+                <img className="inline w-8" src={ImageAirplane} />
+            </Column>
 
-            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]">
+            <Column>
                 <SmallInfoText style={{ fontWeight: "bold", color: allFlights[index].label }}>To</SmallInfoText>
                 DEL
                 <SmallInfoText>Indira Gandhi International</SmallInfoText>
-            </div>
+            </Column>
         </div>
     );
 
+    function Column({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
+        return (
+            <div className="text-[1.5rem] font-bold text-gray-800 flex-[0.5]" {...rest}>
+                {children}
+            </div>
+        );
+    }
+
     function DotsAnimation(props: HTMLAttributes<HTMLDivElement>) {
         return (
-            <div className="absolute pl-0 left-4 top-2 w-5 h-2 overflow-hidden" {...props}>
+            <div className="absolute pl-0 top-[17px] h-2 overflow-hidden" {...props}>
                 <div className="absolute w-14 flex [animation:dots-slidein_1s_infinite_linear]">
-                    <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
-                    <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
-                    <div className="mr-3 w-1.5 h-2 bg-gray-500 rounded-full" />
+                    <div className="mr-3 w-1 h-1 bg-gray-500 rounded-full" />
+                    <div className="mr-3 w-1 h-1 bg-gray-500 rounded-full" />
+                    <div className="mr-3 w-1 h-1 bg-gray-500 rounded-full" />
                 </div>
             </div>
         );
@@ -50,14 +59,14 @@ function Card_01_closed({ index }: { index: number; }) {
         <div id="card-01-closed">
             <img src={allFlights[index].src} style={allFlights[index].style} />
             <div className="pr-3 pt-3 flex">
-                <Detail title1="San Francisco" title2="6:20" title3="June 12" />
+                <Column title1="San Francisco" title2="6:20" title3="June 12" />
                 <img className="w-[30px] h-[26px] mx-4 mt-6" src={ImageAirplane} />
-                <Detail title1="New Delhi" title2="8:45" title3="June 12" />
+                <Column title1="New Delhi" title2="8:45" title3="June 12" />
             </div>
         </div>
     );
 
-    function Detail({ title1, title2, title3, ...rest }: HTMLAttributes<HTMLDivElement> & { title1: string; title2: string; title3: string; }) {
+    function Column({ title1, title2, title3, ...rest }: HTMLAttributes<HTMLDivElement> & { title1: string; title2: string; title3: string; }) {
         return (
             <div className="pt-3 text-[9px] text-gray-400">
                 {title1}
@@ -72,28 +81,29 @@ function Card_02_open({ index }: { index: number; }) {
     return (
         <div id="card-02-open">
             <Column>
-                <Detail title="Flight Time">6:20 - 8:45</Detail>
-                <Detail title="Transfer">No</Detail>
+                <Row main="6:20 - 8:45" explanation="Flight Time" />
+                <Row main="No" explanation="Transfer" />
             </Column>
             <Column>
-                <Detail title="Duration">2h 25 min</Detail>
-                <Detail title="Gate">8</Detail>
+                <Row main="2h 25 min" explanation="Duration" />
+                <Row main="8" explanation="Gate" />
             </Column>
             <Column>
-                <Detail title="Boarding">5:35</Detail>
-                <Detail title="Seat">20A</Detail>
+                <Row main="5:35" explanation="Boarding" />
+                <Row main="20A" explanation="Seat" />
             </Column>
         </div>
     );
 
-    function Detail({ children, title, ...rest }: HTMLAttributes<HTMLDivElement>) {
+    function Row({ main, explanation }: { main: string; explanation: string; }) {
         return (
             <div className="text-[1rem] font-bold">
-                {children}
-                <SmallInfoText>{title}</SmallInfoText>
+                {main}
+                <SmallInfoText>{explanation}</SmallInfoText>
             </div>
         );
     }
+
     function Column({ children, ...rest }: HTMLAttributes<HTMLDivElement>) {
         return (
             <div className="mt-2 relative flex flex-col justify-between text-left">
@@ -103,7 +113,7 @@ function Card_02_open({ index }: { index: number; }) {
     }
 }
 
-function Card_03_open({ index, active }: { index: number; active: boolean; }) {
+function Card_03_open({ index, active, children }: { index: number; active: boolean; children: ReactNode; }) {
     return (
         <div id="second" style={{ transform: active ? `rotate3d(1, 0, 0, -180deg)` : `rotate3d(1, 0, 0, 0deg)`, transitionDelay: active ? "0.2s" : "0.2s" }}>
             <div id="secondTop" />
@@ -114,7 +124,7 @@ function Card_03_open({ index, active }: { index: number; active: boolean; }) {
                     <img className="w-24 h-8" src={ImageBarcode} />
                 </div>
 
-                <Card_04_open index={index} active={active} />
+                {children}
             </div>
         </div>
     );
@@ -163,7 +173,9 @@ function AllCards({ index }: { index: number; }) {
 
                 <div id="firstBehind">
                     <Card_02_open index={index} />
-                    <Card_03_open index={index} active={active} />
+                    <Card_03_open index={index} active={active}>
+                        <Card_04_open index={index} active={active} />
+                    </Card_03_open>
                 </div>
             </div>
         </div >
