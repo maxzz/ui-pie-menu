@@ -1,11 +1,10 @@
 import { Fragment } from "react";
-import { appState, filterValues, setFilter, useSnapshot } from "../../store";
-import { classNames } from "../../utils";
+import { appState, demo5, useSnapshot } from "../../store";
 
-function Filters() { //https://valtio.pmnd.rs/docs/introduction/getting-started
+function Filters() {
     const snap = useSnapshot(appState);
     return (<>
-        {filterValues.map((filter) => (
+        {demo5.filterValues.map((filter: demo5.Filter) => (
             <Fragment key={filter}>
                 <label className="space-x-1">
                     <input
@@ -13,7 +12,7 @@ function Filters() { //https://valtio.pmnd.rs/docs/introduction/getting-started
                         name="filter"
                         value={filter}
                         checked={snap.filter === filter}
-                        onChange={() => setFilter(filter)} />
+                        onChange={() => appState.filter = filter} />
                     <span>{filter}</span>
                 </label>
             </Fragment>
