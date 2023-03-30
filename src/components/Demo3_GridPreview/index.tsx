@@ -15,21 +15,6 @@ const styleText: CSSProperties = {
 };
 
 function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; }) {
-    function onClick(event: React.MouseEvent<HTMLElement, MouseEvent>) {
-        const clickCapElm = event.currentTarget;
-        clickCapElm.parentElement!.querySelectorAll<HTMLElement>('.cell-cap')
-            .forEach((cap) => {
-                const cnt = cap.nextElementSibling;
-                const v = cap.dataset;
-                if (cap === clickCapElm) {
-                    cnt?.classList.toggle('hidden');
-                    v.highlighted ? delete v.highlighted : v.highlighted = '1';
-                } else {
-                    cnt?.classList.add('hidden');
-                    delete v.highlighted;
-                }
-            });
-    }
     return (<>
         <div
             className="cell-cap mx-2 py-2 text-xl font-bold tracking-tighter uppercase 
@@ -46,11 +31,30 @@ function Cell({ caption, content }: { caption: ReactNode, content: ReactNode; })
         <div
             className="
                 cell-cnt hidden mx-2 mb-2 px-4 py-4 col-span-full text-sm text-neutral-100/70 bg-orange-400/70 border-neutral-900/20 border rounded 
-                first-letter:mr-2 first-letter:text-4xl first-letter:text-orange-800 first-letter:font-bold first-letter:float-left first-letter:select-none
-            ">
+                first-letter:mr-2 first-letter:text-4xl first-letter:text-orange-800 first-letter:font-bold first-letter:float-left first-letter:select-none"
+        >
             {content}
         </div>
     </>);
+
+    function onClick(event: React.MouseEvent<HTMLElement, MouseEvent>) {
+        const clickCapElm = event.currentTarget;
+        const allArticles = clickCapElm.parentElement!.querySelectorAll<HTMLElement>('.cell-cap');
+
+        allArticles.forEach((capEl: HTMLElement) => {
+            const cntEl = capEl.nextElementSibling;
+            const data = capEl.dataset;
+            const isActive = capEl === clickCapElm;
+
+            if (isActive) {
+                cntEl?.classList.toggle('hidden');
+                data.highlighted ? delete data.highlighted : data.highlighted = '1';
+            } else {
+                cntEl?.classList.add('hidden');
+                delete data.highlighted;
+            }
+        });
+    }
 }
 
 const articles = [
